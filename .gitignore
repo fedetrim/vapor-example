@@ -66,3 +66,13 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+
+# Vapor
+#
+# Created by Vapor API template
+Packages
+.build
+xcuserdata
+*.xcodeproj
+DerivedData/
+.DS_Store
