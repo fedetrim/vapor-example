@@ -11,7 +11,7 @@ import UIKit
 import Moya
 import Models
 
-class TechTalkDetailViewController: UIViewController {
+class TechTalksDetailViewController: UIViewController {
     var techTalk: TechTalk!
     var provider = MoyaProvider<TechTalkDetailEndpoint>()
     
