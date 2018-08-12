@@ -22,21 +22,21 @@ struct Speaker: SpeakerType, Codable {
     var id: Int?
     var firstName: String
     var lastName: String
-    var photoUrl: String
-    var githubUrl: String
+    var photoURL: String
+    var githubURL: String
     
     init(id: Int? = nil, firstName: String, lastName: String, photoUrl: String, githubUrl: String) {
         self.id = id
         self.firstName = firstName
         self.lastName = lastName
-        self.photoUrl = photoUrl
-        self.githubUrl = githubUrl
+        self.photoURL = photoUrl
+        self.githubURL = githubUrl
     }
 }
 
 // MARK: - TechTalk
 
-struct TechTalk: Codable {
+struct TechTalk: TechTalkType, Codable {
     var id: Int
     var title: String
     var description: String

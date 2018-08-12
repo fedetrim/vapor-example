@@ -12,6 +12,6 @@ public protocol SpeakerType {
     var id: Int? { get set }
     var firstName: String { get set }
     var lastName: String { get set }
-    var photoUrl: String { get set }
-    var githubUrl: String { get set }
+    var photoURL: URL { get set }
+    var githubURL: URL { get set }
 }

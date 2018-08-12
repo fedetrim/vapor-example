@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol TechTalkType {
+public protocol TechTalkType {
     associatedtype Reviews
     associatedtype Speaker
     

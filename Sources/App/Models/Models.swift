@@ -33,15 +33,15 @@ struct Speaker: SpeakerType, Codable {
     var id: Int?
     var firstName: String
     var lastName: String
-    var photoUrl: String
-    var githubUrl: String
+    var photoURL: URL
+    var githubURL: URL
     
-    init(id: Int? = nil, firstName: String, lastName: String, photoUrl: String, githubUrl: String) {
+    init(id: Int? = nil, firstName: String, lastName: String, photoURL: URL, githubURL: URL) {
         self.id = id
         self.firstName = firstName
         self.lastName = lastName
-        self.photoUrl = photoUrl
-        self.githubUrl = githubUrl
+        self.photoURL = photoURL
+        self.githubURL = githubURL
     }
 }
 

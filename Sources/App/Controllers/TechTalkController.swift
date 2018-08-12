@@ -11,8 +11,27 @@ import ModelProtocols
 
 final class TechTalkController {
     
-    func index(_ req: Request) throws -> Future<[TechTalk]> {
-        return TechTalk.query(on: req).all()
+    struct TechTalkDTO: TechTalkType {
+        var id: Int?
+        var title: String
+        var description: String
+        var speaker: Speaker
+        var reviews: [Review]
+    }
+    
+    func index(_ req: Request) throws -> Future<View> {
+        return TechTalk.query(on: req)
+            .join(\Review.techTalkID, to: \TechTalk.id)
+            .alsoDecode(Review.self)
+            .all()
+            .flatMap(to: View.self) { data in
+                let reviews = data.map { args -> Review in
+                    let (techTalk, review) = args
+                    return review
+                }
+                
+                return try req.view().render("reviews", reviews)
+            }
     }
     
     func create(_ req: Request) throws -> Future<TechTalk> {
