@@ -49,6 +49,7 @@ class TechTalksViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTableView()
+        setUpNavigationStyle()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -65,6 +66,10 @@ class TechTalksViewController: UIViewController {
         DispatchQueue.main.async {
             self.feedTableView.reloadData()
         }
+    }
+    
+    func setUpNavigationStyle() {
+        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
 
@@ -90,7 +95,17 @@ extension TechTalksViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: TechTalkTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-
+        
+        decorateTechTalkCell(cell, viewModel: techTalks[indexPath.row])
+        
         return cell
+    }
+    
+    func decorateTechTalkCell(_ cell: TechTalkTableViewCell, viewModel: TechTalks.TechTalkViewModel) {
+        cell.updateSpeakerInfoViewInputs(fullName: viewModel.speakerName,
+                                         photoImageUrl: viewModel.speakerPhoto,
+                                         githubUrl: viewModel.speakerGithubUrl)
+        
+        cell.updateTechTalkViewInputs(title: viewModel.title, description: viewModel.description)
     }
 }

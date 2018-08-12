@@ -9,6 +9,8 @@
 import UIKit
 
 class TechTalkTableViewCell: UITableViewCell {
+    @IBOutlet private var techTalkView: TechTalkView!
+    @IBOutlet private var speakerInfoView: SpeakerInfoView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -16,5 +18,13 @@ class TechTalkTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+
+    func updateTechTalkViewInputs(title: String, description: String) {
+        techTalkView.updateInfo(title: title, description: description)
+    }
+    
+    func updateSpeakerInfoViewInputs(fullName: String, photoImageUrl: String, githubUrl: String) {
+        speakerInfoView.update(fullName: fullName, photoImageUrl: photoImageUrl, githubUrl: githubUrl)
     }
 }

@@ -13,7 +13,7 @@
         <!--Swift BA Meetup-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="TechTalksFeedViewController" customModule="SwiftBA_Client" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TechTalksViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,7 +34,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Swift BA Meetup" id="kEP-6x-GnR"/>
                     <connections>
-                        <outlet property="feedTableView" destination="IyB-Ow-Y4n" id="1IA-TO-o93"/>
+                        <outlet property="feedTableView" destination="IyB-Ow-Y4n" id="wfo-mV-tsl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

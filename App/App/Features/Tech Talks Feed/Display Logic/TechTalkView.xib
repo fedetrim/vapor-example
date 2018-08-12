@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TechTalkView" customModule="App" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="TlK-gz-Tzr"/>
+                <outlet property="descriptionLabel" destination="XgS-ce-Jhh" id="Rdd-Qp-3ck"/>
+                <outlet property="titleLabel" destination="yiu-BG-joJ" id="dMr-Md-Ocl"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Tech Talk" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiu-BG-joJ">
+                    <rect key="frame" x="16" y="7" width="288" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="5aE-e2-hSo"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XgS-ce-Jhh">
+                    <rect key="frame" x="16" y="38" width="288" height="75"/>
+                    <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic...</string>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="10"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="XgS-ce-Jhh" secondAttribute="bottom" constant="7" id="4jE-IU-adR"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="XgS-ce-Jhh" secondAttribute="trailing" constant="16" id="5Eq-EL-tJp"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="yiu-BG-joJ" secondAttribute="trailing" constant="16" id="5eN-oe-P9E"/>
+                <constraint firstItem="XgS-ce-Jhh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="BuN-pS-RZl"/>
+                <constraint firstItem="yiu-BG-joJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="WAh-P4-YaG"/>
+                <constraint firstItem="XgS-ce-Jhh" firstAttribute="top" secondItem="yiu-BG-joJ" secondAttribute="bottom" constant="7" id="wr8-vp-6Ws"/>
+                <constraint firstItem="yiu-BG-joJ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="7" id="yYo-L8-OVE"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="6" y="-220"/>
+        </view>
+    </objects>
+</document>
