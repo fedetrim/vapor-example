@@ -11,27 +11,25 @@
 //
 
 import UIKit
+import Moya
+import Models
 
 protocol TechTalksBusinessLogic {
-    func doSomething(request: TechTalks.Something.Request)
+    func performLoad(request: TechTalks.Load.Request)
 }
 
 protocol TechTalksDataStore {
-    //var name: String { get set }
+    var techTalks: [TechTalk] { get set }
 }
 
 class TechTalksInteractor: TechTalksBusinessLogic, TechTalksDataStore {
     var presenter: TechTalksPresentationLogic?
-    var worker: TechTalksWorker?
-    //var name: String = ""
+    var worker: TechTalksProvideable? = FakeTechTalksProvider()
+    var techTalks: [TechTalk] = []
 
-    // MARK: Do something
-
-    func doSomething(request: TechTalks.Something.Request) {
-        worker = TechTalksWorker()
-        worker?.doSomeWork()
-
-        let response = TechTalks.Something.Response()
-        presenter?.presentSomething(response: response)
+    func performLoad(request: TechTalks.Load.Request) {
+        worker?.provide(completion: { result in
+            self.presenter?.presentTechTalks(basedOn: TechTalks.Load.Response(result: result))
+        })
     }
 }

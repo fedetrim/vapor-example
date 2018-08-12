@@ -10,9 +10,26 @@
 //  see http://clean-swift.com
 //
 
-import UIKit
+import Foundation
+import Models
+import Moya
+import Result
 
-class TechTalksWorker {
-    func doSomeWork() {
+protocol TechTalksProvideable {
+    func provide(completion: @escaping (Result<[TechTalk], NSError>) -> Void)
+}
+
+class FakeTechTalksProvider: TechTalksProvideable {
+    func provide(completion: @escaping (Result<[TechTalk], NSError>) -> Void) {
+        let stubProvider = MoyaProvider<TechTalksEndpoint>(stubClosure: MoyaProvider.immediatelyStub)
+        stubProvider.request(.get) { (result) in
+            do {
+                let response = try result.dematerialize()
+
+                completion(.success(try response.map([TechTalk].self)))
+            } catch {
+                completion(.failure(NSError(domain: "FakeProvider Error", code: 600, userInfo: nil)))
+            }
+        }
     }
 }

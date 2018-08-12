@@ -10,19 +10,35 @@
 //  see http://clean-swift.com
 //
 
+import Models
 import UIKit
 
 protocol TechTalksPresentationLogic {
-    func presentSomething(response: TechTalks.Something.Response)
+    func presentTechTalks(basedOn response: TechTalks.Load.Response)
 }
 
 class TechTalksPresenter: TechTalksPresentationLogic {
     weak var viewController: TechTalksDisplayLogic?
 
-    // MARK: Do something
+    func presentTechTalks(basedOn response: TechTalks.Load.Response) {
+        do {
+            let result = try response.result.dematerialize()
 
-    func presentSomething(response: TechTalks.Something.Response) {
-        let viewModel = TechTalks.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+            let viewModel = TechTalks.Load.ViewModel(result: .success(mapTechTalksToViewModel(result)))
+
+            self.viewController?.displayTechTalks(viewModel: viewModel)
+        } catch {
+            // Add error handling stuff
+        }
+    }
+
+    private func mapTechTalksToViewModel(_ techTalks: [TechTalk]) -> [TechTalks.TechTalkViewModel] {
+        return techTalks.map {
+            return TechTalks.TechTalkViewModel(title: $0.title,
+                                               description: $0.description,
+                                               speakerName: "\($0.speaker.firstName) \($0.speaker.lastName)",
+                                               speakerPhoto: $0.speaker.photoUrl,
+                                               speakerGithubUrl: $0.speaker.githubUrl)
+        }
     }
 }

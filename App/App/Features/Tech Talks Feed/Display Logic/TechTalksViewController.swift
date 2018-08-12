@@ -13,12 +13,13 @@
 import UIKit
 
 protocol TechTalksDisplayLogic: class {
-    func displaySomething(viewModel: TechTalks.Something.ViewModel)
+    func displayTechTalks(viewModel: TechTalks.Load.ViewModel)
 }
 
-class TechTalksViewController: UIViewController, TechTalksDisplayLogic {
+class TechTalksViewController: UIViewController {
     var interactor: TechTalksBusinessLogic?
     var router: (NSObjectProtocol & TechTalksRoutingLogic & TechTalksDataPassing)?
+    var techTalks: [TechTalks.TechTalkViewModel] = []
     @IBOutlet var feedTableView: UITableView!
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -47,15 +48,49 @@ class TechTalksViewController: UIViewController, TechTalksDisplayLogic {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        doSomething()
+        setUpTableView()
     }
 
-    func doSomething() {
-        let request = TechTalks.Something.Request()
-        interactor?.doSomething(request: request)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        requestForTechTalks()
     }
 
-    func displaySomething(viewModel: TechTalks.Something.ViewModel) {
-        //nameTextField.text = viewModel.name
+    func setUpTableView() {
+        feedTableView.dataSource = self
+        feedTableView.registerNib(TechTalkTableViewCell.self)
+    }
+
+    func reloadTableView() {
+        DispatchQueue.main.async {
+            self.feedTableView.reloadData()
+        }
+    }
+}
+
+extension TechTalksViewController: TechTalksDisplayLogic {
+    func requestForTechTalks() {
+        interactor?.performLoad(request: TechTalks.Load.Request())
+    }
+
+    func displayTechTalks(viewModel: TechTalks.Load.ViewModel) {
+        do {
+            self.techTalks = try viewModel.result.dematerialize()
+            reloadTableView()
+        } catch {
+            // Display Error
+        }
+    }
+}
+
+extension TechTalksViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return techTalks.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: TechTalkTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+
+        return cell
     }
 }
