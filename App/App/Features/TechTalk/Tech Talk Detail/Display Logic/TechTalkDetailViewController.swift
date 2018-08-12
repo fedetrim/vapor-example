@@ -19,6 +19,11 @@ protocol TechTalkDetailDisplayLogic: class {
 class TechTalkDetailViewController: UIViewController {
     var interactor: TechTalkDetailBusinessLogic?
     var router: (NSObjectProtocol & TechTalkDetailRoutingLogic & TechTalkDetailDataPassing)?
+    @IBOutlet var speakerInfoView: SpeakerInfoView!
+    @IBOutlet var techTalkView: TechTalkView!
+    @IBOutlet var reviewsTableView: UITableView!
+
+    var reviews: [TechTalkDetail.ReviewViewModel] = []
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -46,11 +51,59 @@ class TechTalkDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpTableView()
+        requestForDetail()
+    }
+
+    func setUpTableView() {
+        reviewsTableView.dataSource = self
+        reviewsTableView.delegate = self
+        reviewsTableView.tableFooterView = UIView()
+        reviewsTableView.backgroundColor = .lightGray
+        reviewsTableView.registerNib(TechTalkTableViewCell.self)
+    }
+
+    func reloadTableView() {
+        DispatchQueue.main.async {
+            self.reviewsTableView.reloadData()
+        }
+    }
+    
+    func requestForDetail() {
+        interactor?.performLoad(basedOn: TechTalkDetail.Load.Request())
     }
 }
 
 extension TechTalkDetailViewController: TechTalkDetailDisplayLogic {
     func displayDetail(basedOn viewModel: TechTalkDetail.Load.ViewModel) {
+        do {
+            let detailViewModel = try viewModel.result.dematerialize()
 
+            speakerInfoView.update(fullName: detailViewModel.speakerName,
+                                   photoImageUrl: detailViewModel.speakerPhoto,
+                                   githubUrl: detailViewModel.speakerGithubUrl)
+            techTalkView.updateInfo(title: detailViewModel.title,
+                                    description: detailViewModel.description)
+
+            self.reviews = detailViewModel.reviews
+
+            reloadTableView()
+        } catch {
+            // Perform error handling
+        }
     }
+}
+
+extension TechTalkDetailViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return reviews.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+}
+
+extension TechTalkDetailViewController: UITableViewDelegate {
+
 }

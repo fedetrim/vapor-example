@@ -35,11 +35,74 @@
                     <navigationItem key="navigationItem" title="Swift BA Meetup" id="kEP-6x-GnR"/>
                     <connections>
                         <outlet property="feedTableView" destination="IyB-Ow-Y4n" id="wfo-mV-tsl"/>
+                        <segue destination="PHQ-kP-lll" kind="show" id="zDr-xJ-adA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="942" y="-564"/>
+            <point key="canvasLocation" x="1004" y="-564"/>
+        </scene>
+        <!--Tech Talk Detail View Controller-->
+        <scene sceneID="YjR-gO-AJO">
+            <objects>
+                <viewController storyboardIdentifier="TechTalkDetailViewController" id="PHQ-kP-lll" customClass="TechTalkDetailViewController" customModule="App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pfc-LC-lX9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhc-Gl-l7x">
+                                <rect key="frame" x="0.0" y="184" width="375" height="1"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="mDW-Yz-JPi"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e4t-7g-dAM" customClass="SpeakerInfoView" customModule="App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="185" width="375" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="6KP-hk-9Gz"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gQv-It-Um9">
+                                <rect key="frame" x="0.0" y="285" width="375" height="382"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wKS-Hx-aDl" customClass="TechTalkView" customModule="App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="120"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="A6F-iX-dbf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gQv-It-Um9" firstAttribute="leading" secondItem="r3A-at-hkV" secondAttribute="leading" id="7CQ-nm-eqO"/>
+                            <constraint firstItem="gQv-It-Um9" firstAttribute="bottom" secondItem="r3A-at-hkV" secondAttribute="bottom" id="9Cm-Yr-ud9"/>
+                            <constraint firstItem="fhc-Gl-l7x" firstAttribute="top" secondItem="wKS-Hx-aDl" secondAttribute="bottom" id="9ZR-I6-VlM"/>
+                            <constraint firstItem="gQv-It-Um9" firstAttribute="trailing" secondItem="r3A-at-hkV" secondAttribute="trailing" id="HSL-MI-gCg"/>
+                            <constraint firstItem="fhc-Gl-l7x" firstAttribute="leading" secondItem="pfc-LC-lX9" secondAttribute="leading" id="bcU-91-ne9"/>
+                            <constraint firstItem="wKS-Hx-aDl" firstAttribute="leading" secondItem="r3A-at-hkV" secondAttribute="leading" id="cBb-JK-gn8"/>
+                            <constraint firstAttribute="trailing" secondItem="fhc-Gl-l7x" secondAttribute="trailing" id="dqF-zE-KKJ"/>
+                            <constraint firstItem="e4t-7g-dAM" firstAttribute="top" secondItem="fhc-Gl-l7x" secondAttribute="bottom" id="gd3-uP-Zsh"/>
+                            <constraint firstItem="e4t-7g-dAM" firstAttribute="leading" secondItem="r3A-at-hkV" secondAttribute="leading" id="kwf-bM-Ip0"/>
+                            <constraint firstItem="gQv-It-Um9" firstAttribute="top" secondItem="e4t-7g-dAM" secondAttribute="bottom" id="qMh-nN-TFN"/>
+                            <constraint firstItem="wKS-Hx-aDl" firstAttribute="trailing" secondItem="r3A-at-hkV" secondAttribute="trailing" id="ro3-gF-3Uk"/>
+                            <constraint firstItem="e4t-7g-dAM" firstAttribute="trailing" secondItem="r3A-at-hkV" secondAttribute="trailing" id="ukH-IZ-sjU"/>
+                            <constraint firstItem="wKS-Hx-aDl" firstAttribute="top" secondItem="r3A-at-hkV" secondAttribute="top" id="zQK-cP-aZ9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="r3A-at-hkV"/>
+                    </view>
+                    <connections>
+                        <outlet property="reviewsTableView" destination="gQv-It-Um9" id="y2a-6w-P9s"/>
+                        <outlet property="speakerInfoView" destination="e4t-7g-dAM" id="jUq-ea-I93"/>
+                        <outlet property="techTalkView" destination="wKS-Hx-aDl" id="o8E-Bt-ahW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wbc-UL-blp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1904.8" y="-564.46776611694156"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lZd-Pw-t93">

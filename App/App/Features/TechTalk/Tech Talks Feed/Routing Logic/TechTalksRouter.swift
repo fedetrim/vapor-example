@@ -31,11 +31,14 @@ class TechTalksRouter: NSObject, TechTalksRoutingLogic, TechTalksDataPassing {
     }
 
     func routeToDetail() {
-        let detailController = TechTalkDetailViewController()
-        var destinationDataStore = detailController.router?.dataStore!
+        guard let controller = viewController?.storyboard?.instantiateViewController(withIdentifier: "TechTalkDetailViewController")
+        as? TechTalkDetailViewController else {
+            return
+        }
+        var destinationDataStore = controller.router?.dataStore!
 
         passDetailData(from: dataStore!, to: &destinationDataStore!)
-        navigator?.navigateToNextScene(from: viewController!, to: detailController)
+        navigator?.navigateToNextScene(from: viewController!, to: controller)
     }
 
     func passDetailData(from source: TechTalksDataStore, to destination: inout TechTalkDetailDataStore) {
