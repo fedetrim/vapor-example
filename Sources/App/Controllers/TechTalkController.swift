@@ -23,3 +23,12 @@ final class TechTalkController {
 
 }
 
+final class ReviewController {
+    
+    func create(_ req: Request) throws -> Future<Review> {
+        return try req.content.decode(Review.self).flatMap { review in
+            return review.save(on: req)
+        }
+    }
+    
+}
