@@ -1,6 +1,6 @@
 import FluentMySQL
 import Vapor
-import Models
+import ModelProtocols
 
 /// Called before your application initializes.
 public func configure(_ config: inout Config, _ env: inout Environment, _ services: inout Services) throws {
@@ -40,7 +40,6 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
 
     /// Configure migrations
     var migrations = MigrationConfig()
-    migrations.add(model: Todo.self, database: .mysql)
     migrations.add(model: Review.self, database: .mysql)
     migrations.add(model: Speaker.self, database: .mysql)
     migrations.add(model: TechTalk.self, database: .mysql)

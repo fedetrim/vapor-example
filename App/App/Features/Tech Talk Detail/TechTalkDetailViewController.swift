@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import Moya
-import Models
+import ModelProtocols
 
 class TechTalkDetailViewController: UIViewController {
     var techTalk: TechTalk!

@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 import Moya
-import Models
+import ModelProtocols
 
 class TechTalksFeedViewController: UIViewController {
-    var techTalks: [TechTalkable] = []
+    var techTalks: [TechTalk] = []
     @IBOutlet var feedTableView: UITableView!
     var provider = MoyaProvider<TechTalksEndpoint>()
 

@@ -8,7 +8,7 @@
 
 import Foundation
 import Moya
-import Models
+import ModelProtocols
 
 // swiftlint:disable line_length
 final class MockTechTalksProvider {

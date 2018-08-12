@@ -7,7 +7,7 @@
 
 import FluentMySQL
 import Vapor
-import Models
+import ModelProtocols
 
 final class TechTalkController {
     
