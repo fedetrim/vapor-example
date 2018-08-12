@@ -14,7 +14,7 @@ import Models
 class TechTalkDetailViewController: UIViewController {
     var techTalk: TechTalk!
     var provider = MoyaProvider<TechTalkDetailEndpoint>()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
