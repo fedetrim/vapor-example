@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import Moya
-import Result
 import Models
 
 class TechTalkDetailViewController: UIViewController {
