@@ -21,9 +21,9 @@ class SpeakerInfoView: DesignableView {
         return "SpeakerInfoView"
     }
 
-    func update(fullName: String, photoImageUrl: String, githubUrl: String) {
+    func update(fullName: String, photoImageUrl: URL, githubUrl: URL) {
         self.fullNameLabel.text = fullName
         self.photoImageView.loadImageFrom(url: photoImageUrl)
-        self.githubUrlLabel.text = githubUrl
+//        self.githubUrlLabel.text = githubUrl
     }
 }

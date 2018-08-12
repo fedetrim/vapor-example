@@ -24,7 +24,7 @@ class TechTalkTableViewCell: UITableViewCell {
         techTalkView.updateInfo(title: title, description: description)
     }
     
-    func updateSpeakerInfoViewInputs(fullName: String, photoImageUrl: String, githubUrl: String) {
+    func updateSpeakerInfoViewInputs(fullName: String, photoImageUrl: URL, githubUrl: URL) {
         speakerInfoView.update(fullName: fullName, photoImageUrl: photoImageUrl, githubUrl: githubUrl)
     }
 }

@@ -8,12 +8,8 @@
 
 import Foundation
 
-public protocol Reviewable {
+public protocol ReviewType {
+    var id: Int? { get set }
     var description: String { get set }
     var stars: Double { get set }
-}
-
-public struct Review: Codable, Reviewable {
-    public var description: String
-    public var stars: Double
 }

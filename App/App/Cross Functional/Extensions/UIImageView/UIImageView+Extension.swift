@@ -11,11 +11,9 @@ import UIKit
 
 extension UIImageView {
 
-    func loadImageFrom(url: String) {
-        if let url = NSURL(string: url) {
-            if let data = NSData(contentsOf: url as URL) {
-                self.image = UIImage(data: data as Data)
-            }
+    func loadImageFrom(url: URL) {
+        if let data = NSData(contentsOf: url) {
+            self.image = UIImage(data: data as Data)
         }
     }
 }

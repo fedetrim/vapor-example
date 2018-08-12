@@ -12,7 +12,6 @@
 
 import UIKit
 import Moya
-import Models
 
 protocol TechTalksBusinessLogic {
     func performLoad(request: TechTalks.Load.Request)

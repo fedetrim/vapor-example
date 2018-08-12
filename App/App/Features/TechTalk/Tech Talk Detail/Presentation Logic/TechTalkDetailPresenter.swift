@@ -11,7 +11,6 @@
 //
 
 import UIKit
-import Models
 
 protocol TechTalkDetailPresentationLogic {
     func presentDetail(basedOn response: TechTalkDetail.Load.Response)
@@ -36,8 +35,8 @@ class TechTalkDetailPresenter: TechTalkDetailPresentationLogic {
         return TechTalkDetail.TechTalkDetailViewModel(title: techTalk.title,
                                                       description: techTalk.description,
                                                       speakerName: "\(techTalk.speaker.firstName) \(techTalk.speaker.lastName)",
-                                                      speakerPhoto: techTalk.speaker.photoUrl,
-                                                      speakerGithubUrl: techTalk.speaker.githubUrl,
+                                                      speakerPhoto: techTalk.speaker.photoURL,
+                                                      speakerGithubUrl: techTalk.speaker.githubURL,
                                                       reviews: mapReviewsToViewModel(techTalk.reviews))
     }
 

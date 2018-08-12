@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Models
 import Moya
 import Result
 

@@ -10,7 +10,6 @@
 //  see http://clean-swift.com
 //
 
-import Models
 import UIKit
 
 protocol TechTalksPresentationLogic {
@@ -37,8 +36,8 @@ class TechTalksPresenter: TechTalksPresentationLogic {
             return TechTalks.TechTalkViewModel(title: $0.title,
                                                description: $0.description,
                                                speakerName: "\($0.speaker.firstName) \($0.speaker.lastName)",
-                                               speakerPhoto: $0.speaker.photoUrl,
-                                               speakerGithubUrl: $0.speaker.githubUrl)
+                                               speakerPhoto: $0.speaker.photoURL,
+                                               speakerGithubUrl: $0.speaker.githubURL)
         }
     }
 }

@@ -11,7 +11,6 @@
 //
 
 import Foundation
-import Models
 import Result
 import UIKit
 
@@ -33,8 +32,8 @@ enum TechTalkDetail {
         var title: String
         var description: String
         var speakerName: String
-        var speakerPhoto: String
-        var speakerGithubUrl: String
+        var speakerPhoto: URL
+        var speakerGithubUrl: URL
         var reviews: [ReviewViewModel]
     }
 

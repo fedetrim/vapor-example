@@ -11,7 +11,6 @@
 //
 
 import UIKit
-import Models
 
 protocol TechTalkDetailBusinessLogic {
 

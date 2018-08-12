@@ -11,7 +11,6 @@
 //
 
 import Foundation
-import Models
 import Result
 
 enum TechTalks {
@@ -32,7 +31,7 @@ enum TechTalks {
         var title: String
         var description: String
         var speakerName: String
-        var speakerPhoto: String
-        var speakerGithubUrl: String
+        var speakerPhoto: URL
+        var speakerGithubUrl: URL
     }
 }
