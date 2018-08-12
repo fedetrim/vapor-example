@@ -59,6 +59,7 @@ class TechTalksViewController: UIViewController {
 
     func setUpTableView() {
         feedTableView.dataSource = self
+        feedTableView.delegate = self
         feedTableView.registerNib(TechTalkTableViewCell.self)
     }
 

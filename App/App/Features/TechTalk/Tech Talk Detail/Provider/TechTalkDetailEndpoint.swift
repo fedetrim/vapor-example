@@ -13,7 +13,7 @@ enum TechTalkDetailEndpoint: TargetType {
     case detail(Int)
 
     var baseURL: URL {
-        return URL(string: "https://swiftba-vapor-example.vapor.cloud")!
+        return URL(string: Environment().configuration(.serverURL))!
     }
 
     var path: String {

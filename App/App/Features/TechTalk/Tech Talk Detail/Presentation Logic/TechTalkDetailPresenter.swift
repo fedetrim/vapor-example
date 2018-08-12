@@ -11,10 +11,41 @@
 //
 
 import UIKit
+import Models
 
 protocol TechTalkDetailPresentationLogic {
+    func presentDetail(basedOn response: TechTalkDetail.Load.Response)
 }
 
 class TechTalkDetailPresenter: TechTalkDetailPresentationLogic {
     weak var viewController: TechTalkDetailDisplayLogic?
+
+    func presentDetail(basedOn response: TechTalkDetail.Load.Response) {
+        do {
+            let result = try response.result.dematerialize()
+
+            let viewModel = TechTalkDetail.Load.ViewModel(result: .success(mapTechTalkDetailToViewModel(result)))
+
+            self.viewController?.displayDetail(basedOn: viewModel)
+        } catch {
+            // Add error handling stuff
+        }
+    }
+
+    private func mapTechTalkDetailToViewModel(_ techTalk: TechTalk) -> TechTalkDetail.TechTalkDetailViewModel {
+        return TechTalkDetail.TechTalkDetailViewModel(title: techTalk.title,
+                                                      description: techTalk.description,
+                                                      speakerName: "\(techTalk.speaker.firstName) \(techTalk.speaker.lastName)",
+                                                      speakerPhoto: techTalk.speaker.photoUrl,
+                                                      speakerGithubUrl: techTalk.speaker.githubUrl,
+                                                      reviews: mapReviewsToViewModel(techTalk.reviews))
+    }
+
+    private func mapReviewsToViewModel(_ reviews: [Review]) -> [TechTalkDetail.ReviewViewModel] {
+        return reviews.map {
+            return TechTalkDetail.ReviewViewModel(description: $0.description,
+                                                  stars: $0.stars,
+                                                  reviewerEmail: "inahuelzapata@gmail.com")
+        }
+    }
 }

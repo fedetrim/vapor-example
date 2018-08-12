@@ -10,20 +10,37 @@
 //  see http://clean-swift.com
 //
 
+import Foundation
+import Models
+import Result
 import UIKit
 
 enum TechTalkDetail {
-    // MARK: Use cases
 
-    enum Something {
-
-        struct Request {
-        }
+    enum Load {
+        struct Request { }
 
         struct Response {
+            var result: Result<TechTalk, NSError>
         }
 
         struct ViewModel {
+            var result: Result<TechTalkDetailViewModel, NSError>
         }
+    }
+
+    struct TechTalkDetailViewModel {
+        var title: String
+        var description: String
+        var speakerName: String
+        var speakerPhoto: String
+        var speakerGithubUrl: String
+        var reviews: [ReviewViewModel]
+    }
+
+    struct ReviewViewModel {
+        var description: String
+        var stars: Double
+        var reviewerEmail: String
     }
 }

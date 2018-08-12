@@ -29,7 +29,14 @@ class TechTalksInteractor: TechTalksBusinessLogic, TechTalksDataStore {
 
     func performLoad(request: TechTalks.Load.Request) {
         worker?.provide(completion: { result in
-            self.presenter?.presentTechTalks(basedOn: TechTalks.Load.Response(result: result))
+            do {
+                let techTalks = try result.dematerialize()
+                self.techTalks = techTalks
+
+                self.presenter?.presentTechTalks(basedOn: TechTalks.Load.Response(result: .success(techTalks)))
+            } catch {
+                // Add error handling logic
+            }
         })
     }
 }

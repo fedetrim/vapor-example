@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		CE97B4FA212086BC00B19DD1 /* TechTalksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97B4F4212086BC00B19DD1 /* TechTalksPresenter.swift */; };
-		CE97B4FB212086BC00B19DD1 /* TechTalksWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97B4F5212086BC00B19DD1 /* TechTalksWorker.swift */; };
+		CE97B4FB212086BC00B19DD1 /* FakeTechTalksProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97B4F5212086BC00B19DD1 /* FakeTechTalksProvider.swift */; };
 		CE97B4FC212086BC00B19DD1 /* TechTalksRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97B4F6212086BC00B19DD1 /* TechTalksRouter.swift */; };
 		CE97B4FD212086BC00B19DD1 /* TechTalksModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97B4F7212086BC00B19DD1 /* TechTalksModels.swift */; };
 		CE97B4FE212086BC00B19DD1 /* TechTalksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97B4F8212086BC00B19DD1 /* TechTalksViewController.swift */; };
 		CE97B4FF212086BC00B19DD1 /* TechTalksInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97B4F9212086BC00B19DD1 /* TechTalksInteractor.swift */; };
 		CE97B5022120877E00B19DD1 /* Navigatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97B5012120877E00B19DD1 /* Navigatable.swift */; };
 		CE97B5042120879F00B19DD1 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97B5032120879F00B19DD1 /* Navigator.swift */; };
+		CEA0FFAB2120A82F00157829 /* FakeTechTalkDetailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0FFAA2120A82F00157829 /* FakeTechTalkDetailProvider.swift */; };
 		CEB777DC212095BE00C69235 /* SpeakerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB777DB212095BE00C69235 /* SpeakerInfoView.swift */; };
 		CEB777DE212095CF00C69235 /* SpeakerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB777DD212095CF00C69235 /* SpeakerInfoView.xib */; };
 		CEB777E12120966800C69235 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB777E02120966800C69235 /* DesignableView.swift */; };
@@ -72,13 +73,14 @@
 
 /* Begin PBXFileReference section */
 		CE97B4F4212086BC00B19DD1 /* TechTalksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechTalksPresenter.swift; sourceTree = "<group>"; };
-		CE97B4F5212086BC00B19DD1 /* TechTalksWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechTalksWorker.swift; sourceTree = "<group>"; };
+		CE97B4F5212086BC00B19DD1 /* FakeTechTalksProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTechTalksProvider.swift; sourceTree = "<group>"; };
 		CE97B4F6212086BC00B19DD1 /* TechTalksRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechTalksRouter.swift; sourceTree = "<group>"; };
 		CE97B4F7212086BC00B19DD1 /* TechTalksModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechTalksModels.swift; sourceTree = "<group>"; };
 		CE97B4F8212086BC00B19DD1 /* TechTalksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechTalksViewController.swift; sourceTree = "<group>"; };
 		CE97B4F9212086BC00B19DD1 /* TechTalksInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechTalksInteractor.swift; sourceTree = "<group>"; };
 		CE97B5012120877E00B19DD1 /* Navigatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigatable.swift; sourceTree = "<group>"; };
 		CE97B5032120879F00B19DD1 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		CEA0FFAA2120A82F00157829 /* FakeTechTalkDetailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTechTalkDetailProvider.swift; sourceTree = "<group>"; };
 		CEB777DB212095BE00C69235 /* SpeakerInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerInfoView.swift; sourceTree = "<group>"; };
 		CEB777DD212095CF00C69235 /* SpeakerInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeakerInfoView.xib; sourceTree = "<group>"; };
 		CEB777E02120966800C69235 /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
@@ -143,7 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				CE97B4F9212086BC00B19DD1 /* TechTalksInteractor.swift */,
-				CE97B4F5212086BC00B19DD1 /* TechTalksWorker.swift */,
+				CE97B4F5212086BC00B19DD1 /* FakeTechTalksProvider.swift */,
 			);
 			path = "Business Logic";
 			sourceTree = "<group>";
@@ -231,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				CEB777F32120A33C00C69235 /* TechTalkDetailInteractor.swift */,
+				CEA0FFAA2120A82F00157829 /* FakeTechTalkDetailProvider.swift */,
 			);
 			path = "Business Logic";
 			sourceTree = "<group>";
@@ -506,7 +509,7 @@
 				E3460437211F8D8800D9E86C /* UITableView+Dequeueable.swift in Sources */,
 				CE97B5042120879F00B19DD1 /* Navigator.swift in Sources */,
 				CEB777F82120A33C00C69235 /* TechTalkDetailInteractor.swift in Sources */,
-				CE97B4FB212086BC00B19DD1 /* TechTalksWorker.swift in Sources */,
+				CE97B4FB212086BC00B19DD1 /* FakeTechTalksProvider.swift in Sources */,
 				E346042E211F8D8800D9E86C /* AddReviewViewController.swift in Sources */,
 				CEB777E921209F3B00C69235 /* UIImageView+Extension.swift in Sources */,
 				E346042F211F8D8800D9E86C /* TechTalksEndpoint.swift in Sources */,
@@ -514,6 +517,7 @@
 				CEB777EE2120A26A00C69235 /* TechTalksViewController+UITableViewDataSource.swift in Sources */,
 				CEB777F72120A33C00C69235 /* TechTalkDetailModels.swift in Sources */,
 				CE97B4FA212086BC00B19DD1 /* TechTalksPresenter.swift in Sources */,
+				CEA0FFAB2120A82F00157829 /* FakeTechTalkDetailProvider.swift in Sources */,
 				CE97B5022120877E00B19DD1 /* Navigatable.swift in Sources */,
 				CE97B4FC212086BC00B19DD1 /* TechTalksRouter.swift in Sources */,
 				CE97B4FD212086BC00B19DD1 /* TechTalksModels.swift in Sources */,

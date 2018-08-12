@@ -30,3 +30,14 @@ extension TechTalksViewController: UITableViewDataSource {
         cell.updateTechTalkViewInputs(title: viewModel.title, description: viewModel.description)
     }
 }
+
+extension TechTalksViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        router?.routeToDetail()
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.selectionStyle = .none
+        cell.separatorInset = .zero
+    }
+}

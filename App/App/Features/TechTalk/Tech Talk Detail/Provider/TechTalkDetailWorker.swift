@@ -12,7 +12,3 @@
 
 import UIKit
 
-class TechTalkDetailWorker {
-    func doSomeWork() {
-    }
-}

@@ -12,7 +12,10 @@
 
 import UIKit
 
-@objc protocol TechTalksRoutingLogic { }
+@objc protocol TechTalksRoutingLogic {
+
+    func routeToDetail()
+}
 
 protocol TechTalksDataPassing {
     var dataStore: TechTalksDataStore? { get }
@@ -21,9 +24,23 @@ protocol TechTalksDataPassing {
 class TechTalksRouter: NSObject, TechTalksRoutingLogic, TechTalksDataPassing {
     weak var viewController: TechTalksViewController?
     var dataStore: TechTalksDataStore?
-    var navigator: Navigatable? // If you don't have the Navigatable protocol, just uncomment the last few lines.
+    var navigator: Navigatable?
 
     init(navigator: Navigatable? = Navigator()) {
         self.navigator = navigator
+    }
+
+    func routeToDetail() {
+        let detailController = TechTalkDetailViewController()
+        var destinationDataStore = detailController.router?.dataStore!
+
+        passDetailData(from: dataStore!, to: &destinationDataStore!)
+        navigator?.navigateToNextScene(from: viewController!, to: detailController)
+    }
+
+    func passDetailData(from source: TechTalksDataStore, to destination: inout TechTalkDetailDataStore) {
+        if let index = viewController?.feedTableView.indexPathForSelectedRow {
+            destination.techTalk = source.techTalks[index.row]
+        }
     }
 }

@@ -11,14 +11,25 @@
 //
 
 import UIKit
+import Models
 
 protocol TechTalkDetailBusinessLogic {
+
+    func performLoad(basedOn request: TechTalkDetail.Load.Request)
 }
 
 protocol TechTalkDetailDataStore {
+    var techTalk: TechTalk! { get set }
 }
 
 class TechTalkDetailInteractor: TechTalkDetailBusinessLogic, TechTalkDetailDataStore {
     var presenter: TechTalkDetailPresentationLogic?
-    var worker: TechTalkDetailWorker?
+    var provider: TechTalkDetailProvideable? = FakeTechTalkDetailProvider()
+    var techTalk: TechTalk!
+
+    func performLoad(basedOn request: TechTalkDetail.Load.Request) {
+        // Perform provider call
+        
+        presenter?.presentDetail(basedOn: TechTalkDetail.Load.Response(result: .success(techTalk)))
+    }
 }
