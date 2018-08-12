@@ -98,11 +98,27 @@
                         <outlet property="reviewsTableView" destination="gQv-It-Um9" id="y2a-6w-P9s"/>
                         <outlet property="speakerInfoView" destination="e4t-7g-dAM" id="jUq-ea-I93"/>
                         <outlet property="techTalkView" destination="wKS-Hx-aDl" id="o8E-Bt-ahW"/>
+                        <segue destination="CI7-oC-ESu" kind="show" id="P0Y-A3-5lr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wbc-UL-blp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1904.8" y="-564.46776611694156"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hhu-47-8On">
+            <objects>
+                <viewController id="CI7-oC-ESu" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="myo-OL-Spl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="z0T-Ly-AbV"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K3b-jx-ec8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2857" y="-564"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lZd-Pw-t93">

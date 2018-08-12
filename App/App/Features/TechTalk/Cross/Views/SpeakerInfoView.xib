@@ -37,23 +37,33 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speaker Full name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bb-t8-jar">
-                    <rect key="frame" x="100" y="12" width="204" height="20.5"/>
+                    <rect key="frame" x="100" y="39" width="204" height="20.5"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speaker info:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ra4-Rm-vSf">
+                    <rect key="frame" x="100" y="10" width="204" height="21"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="ra4-Rm-vSf" firstAttribute="leading" secondItem="1AL-8G-pQH" secondAttribute="trailing" constant="8" id="2H2-p7-eqz"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ra4-Rm-vSf" secondAttribute="trailing" constant="16" id="7sa-bx-UQp"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8bb-t8-jar" secondAttribute="trailing" constant="16" id="BAn-Es-uz0"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="sgW-Eh-pw1" secondAttribute="trailing" constant="16" id="EHJ-5m-Laf"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="1AL-8G-pQH" secondAttribute="bottom" constant="12" id="Eoj-IS-dW7"/>
-                <constraint firstItem="8bb-t8-jar" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="12" id="MbW-LT-Uyb"/>
+                <constraint firstItem="sgW-Eh-pw1" firstAttribute="top" secondItem="8bb-t8-jar" secondAttribute="bottom" constant="8" id="I4y-zU-hf2"/>
                 <constraint firstItem="sgW-Eh-pw1" firstAttribute="leading" secondItem="1AL-8G-pQH" secondAttribute="trailing" constant="8" id="SSK-Ot-bmN"/>
+                <constraint firstItem="8bb-t8-jar" firstAttribute="leading" secondItem="1AL-8G-pQH" secondAttribute="trailing" constant="8" id="VB2-Yx-Pol"/>
+                <constraint firstItem="ra4-Rm-vSf" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="c3j-NC-uuP"/>
+                <constraint firstItem="8bb-t8-jar" firstAttribute="top" secondItem="ra4-Rm-vSf" secondAttribute="bottom" constant="8" id="c6M-B5-sP6"/>
                 <constraint firstItem="1AL-8G-pQH" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="12" id="fmg-Lt-nfJ"/>
-                <constraint firstItem="8bb-t8-jar" firstAttribute="leading" secondItem="1AL-8G-pQH" secondAttribute="trailing" constant="8" id="hUm-ti-pVb"/>
                 <constraint firstItem="1AL-8G-pQH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="jGY-Q7-Zye"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="sgW-Eh-pw1" secondAttribute="bottom" constant="12" id="tXA-4y-KUL"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8bb-t8-jar" secondAttribute="trailing" constant="16" id="w4a-Jg-eNL"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
