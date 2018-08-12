@@ -16,6 +16,7 @@ public protocol Speakerable {
 }
 
 public struct Speaker: Codable, Speakerable {
+    public var id: Int?
     public var firstName: String
     public var lastName: String
     public var photoUrl: String

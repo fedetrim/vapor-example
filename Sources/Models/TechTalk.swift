@@ -19,7 +19,7 @@ public protocol TechTalkable {
 }
 
 public struct TechTalk: Codable, TechTalkable, Identable {
-    public var id: Int
+    public var id: Int?
 
     public var title: String
 
@@ -29,7 +29,7 @@ public struct TechTalk: Codable, TechTalkable, Identable {
 
     public var reviews: [Review]
     
-    public init(id: Int, title: String, description: String, speaker: Speaker, reviews: [Review]) {
+    public init(id: Int? = nil, title: String, description: String, speaker: Speaker, reviews: [Review]) {
         self.id = id
         self.title = title
         self.description = description
@@ -39,5 +39,5 @@ public struct TechTalk: Codable, TechTalkable, Identable {
 }
 
 public protocol Identable {
-    var id: Int { get set }
+    var id: Int? { get set }
 }

@@ -14,6 +14,7 @@ public protocol Reviewable {
 }
 
 public struct Review: Codable, Reviewable {
+    public var id: Int?
     public var description: String
     public var stars: Double
 }

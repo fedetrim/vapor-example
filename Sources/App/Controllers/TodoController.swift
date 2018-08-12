@@ -2,19 +2,6 @@ import FluentMySQL
 import Vapor
 import Models
 
-/// Allows `Todo` to be persisted in a database.
-extension Todo: MySQLModel { }
-
-/// Allows `Todo` to be used as a dynamic migration.
-extension Todo: Migration { }
-
-/// Allows `Todo` to be encoded to and decoded from HTTP messages.
-extension Todo: Content { }
-
-/// Allows `Todo` to be used as a dynamic parameter in route definitions.
-extension Todo: Parameter { }
-
-
 /// Controls basic CRUD operations on `Todo`s.
 final class TodoController {
     /// Returns a list of all `Todo`s.
