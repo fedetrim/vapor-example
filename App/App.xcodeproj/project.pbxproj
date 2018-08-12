@@ -174,12 +174,42 @@
 			path = UIImageView;
 			sourceTree = "<group>";
 		};
+		CEB777EA2120A18500C69235 /* TechTalk */ = {
+			isa = PBXGroup;
+			children = (
+				CEB777EB2120A19B00C69235 /* Cross */,
+				E346040D211F8D8800D9E86C /* Tech Talk Detail */,
+				E3460413211F8D8800D9E86C /* Tech Talks Feed */,
+			);
+			path = TechTalk;
+			sourceTree = "<group>";
+		};
+		CEB777EB2120A19B00C69235 /* Cross */ = {
+			isa = PBXGroup;
+			children = (
+				CEB777EC2120A1AD00C69235 /* Views */,
+			);
+			path = Cross;
+			sourceTree = "<group>";
+		};
+		CEB777EC2120A1AD00C69235 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E346041A211F8D8800D9E86C /* TechTalkTableViewCell.xib */,
+				E346041B211F8D8800D9E86C /* TechTalkTableViewCell.swift */,
+				CEB777DB212095BE00C69235 /* SpeakerInfoView.swift */,
+				CEB777DD212095CF00C69235 /* SpeakerInfoView.xib */,
+				CEB777E321209A2D00C69235 /* TechTalkView.swift */,
+				CEB777E521209A3B00C69235 /* TechTalkView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		E346040C211F8D8800D9E86C /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				E346040D211F8D8800D9E86C /* Tech Talk Detail */,
+				CEB777EA2120A18500C69235 /* TechTalk */,
 				E3460411211F8D8800D9E86C /* Add Review */,
-				E3460413211F8D8800D9E86C /* Tech Talks Feed */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -227,12 +257,6 @@
 			isa = PBXGroup;
 			children = (
 				CE97B4F8212086BC00B19DD1 /* TechTalksViewController.swift */,
-				E346041A211F8D8800D9E86C /* TechTalkTableViewCell.xib */,
-				E346041B211F8D8800D9E86C /* TechTalkTableViewCell.swift */,
-				CEB777DB212095BE00C69235 /* SpeakerInfoView.swift */,
-				CEB777DD212095CF00C69235 /* SpeakerInfoView.xib */,
-				CEB777E321209A2D00C69235 /* TechTalkView.swift */,
-				CEB777E521209A3B00C69235 /* TechTalkView.xib */,
 			);
 			path = "Display Logic";
 			sourceTree = "<group>";
