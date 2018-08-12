@@ -12,7 +12,7 @@ import Models
 
 // swiftlint:disable line_length
 final class MockTechTalksProvider {
-    
+
     private init() { }
 
     static func mock() -> [TechTalk] {

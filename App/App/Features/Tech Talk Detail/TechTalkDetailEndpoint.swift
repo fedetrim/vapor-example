@@ -11,32 +11,32 @@ import Moya
 
 enum TechTalkDetailEndpoint: TargetType {
     case detail(Int)
-    
+
     var baseURL: URL {
         return URL(string: "https://swiftba-vapor-example.vapor.cloud")!
     }
-    
+
     var path: String {
         switch self {
         case .detail(let id):
             return "/techTalks/\(id)"
         }
     }
-    
+
     var method: Moya.Method {
         return .get
     }
-    
+
     var sampleData: Data {
         return Data()
     }
-    
+
     var task: Task {
         return .requestPlain
     }
-    
-    var headers: [String : String]? {
+
+    var headers: [String: String]? {
         return [:]
     }
-    
+
 }

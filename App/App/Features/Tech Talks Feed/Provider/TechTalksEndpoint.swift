@@ -11,31 +11,31 @@ import Moya
 
 enum TechTalksEndpoint: TargetType {
     case get
-    
+
     var baseURL: URL {
-        return URL(string: "https://swiftba-vapor-example.vapor.cloud")!
+        return URL(string: Environment().configuration(.serverURL))!
     }
-    
+
     var path: String {
         return "techTalks"
     }
-    
+
     var method: Moya.Method {
         return .get
     }
-    
+
     var sampleData: Data {
         let mock = MockTechTalksProvider.mock()
         let encoder = JSONEncoder()
         return try! encoder.encode(mock)
     }
-    
+
     var task: Task {
         return .requestPlain
     }
-    
-    var headers: [String : String]? {
+
+    var headers: [String: String]? {
         return [:]
     }
-   
+
 }
