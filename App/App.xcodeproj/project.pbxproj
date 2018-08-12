@@ -15,7 +15,6 @@
 		E3460432211F8D8800D9E86C /* TechTalksFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3460419211F8D8800D9E86C /* TechTalksFeedViewController.swift */; };
 		E3460433211F8D8800D9E86C /* TechTalkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E346041A211F8D8800D9E86C /* TechTalkTableViewCell.xib */; };
 		E3460434211F8D8800D9E86C /* TechTalkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E346041B211F8D8800D9E86C /* TechTalkTableViewCell.swift */; };
-		E3460435211F8D8800D9E86C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E346041E211F8D8800D9E86C /* Result.swift */; };
 		E3460436211F8D8800D9E86C /* Dequeueable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3460420211F8D8800D9E86C /* Dequeueable.swift */; };
 		E3460437211F8D8800D9E86C /* UITableView+Dequeueable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3460423211F8D8800D9E86C /* UITableView+Dequeueable.swift */; };
 		E3460438211F8D8800D9E86C /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3460425211F8D8800D9E86C /* Environment.swift */; };
@@ -60,7 +59,6 @@
 		E3460419211F8D8800D9E86C /* TechTalksFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechTalksFeedViewController.swift; sourceTree = "<group>"; };
 		E346041A211F8D8800D9E86C /* TechTalkTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TechTalkTableViewCell.xib; sourceTree = "<group>"; };
 		E346041B211F8D8800D9E86C /* TechTalkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechTalkTableViewCell.swift; sourceTree = "<group>"; };
-		E346041E211F8D8800D9E86C /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		E3460420211F8D8800D9E86C /* Dequeueable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dequeueable.swift; sourceTree = "<group>"; };
 		E3460423211F8D8800D9E86C /* UITableView+Dequeueable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeueable.swift"; sourceTree = "<group>"; };
 		E3460425211F8D8800D9E86C /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
@@ -150,20 +148,11 @@
 		E346041C211F8D8800D9E86C /* Cross Functional */ = {
 			isa = PBXGroup;
 			children = (
-				E346041D211F8D8800D9E86C /* Result */,
 				E346041F211F8D8800D9E86C /* Dequeable Cell */,
 				E3460421211F8D8800D9E86C /* Extensions */,
 				E3460424211F8D8800D9E86C /* Environment */,
 			);
 			path = "Cross Functional";
-			sourceTree = "<group>";
-		};
-		E346041D211F8D8800D9E86C /* Result */ = {
-			isa = PBXGroup;
-			children = (
-				E346041E211F8D8800D9E86C /* Result.swift */,
-			);
-			path = Result;
 			sourceTree = "<group>";
 		};
 		E346041F211F8D8800D9E86C /* Dequeable Cell */ = {
@@ -314,7 +303,6 @@
 				E3460432211F8D8800D9E86C /* TechTalksFeedViewController.swift in Sources */,
 				E3460436211F8D8800D9E86C /* Dequeueable.swift in Sources */,
 				E346042B211F8D8800D9E86C /* TechTalkDetailEndpoint.swift in Sources */,
-				E3460435211F8D8800D9E86C /* Result.swift in Sources */,
 				E3C51C1A211F795100CD976D /* AppDelegate.swift in Sources */,
 				E3460430211F8D8800D9E86C /* MockTechTalksProvider.swift in Sources */,
 				E3460439211F8D8800D9E86C /* PListKey.swift in Sources */,
