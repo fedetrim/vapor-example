@@ -7,18 +7,9 @@
 //
 
 import Foundation
+import FluentMySQL
 
-public protocol TechTalkable {
-    var title: String { get set }
-
-    var description: String { get set }
-
-    var speaker: Speaker { get set }
-
-    var reviews: [Review] { get set }
-}
-
-public struct TechTalk: Codable, TechTalkable, Identable {
+public struct TechTalk: Codable, Identable {
     public var id: Int?
 
     public var title: String
@@ -27,15 +18,18 @@ public struct TechTalk: Codable, TechTalkable, Identable {
 
     public var speaker: Speaker
 
-    public var reviews: [Review]
-    
-    public init(id: Int? = nil, title: String, description: String, speaker: Speaker, reviews: [Review]) {
-        self.id = id
-        self.title = title
-        self.description = description
-        self.speaker = speaker
-        self.reviews = reviews
+//    public var reviews: [Review]
+    var reviews: Children<TechTalk, Review> {
+        return children(\.techTalkID)
     }
+    
+//    public init(id: Int? = nil, title: String, description: String, speaker: Speaker, reviews: [Review]) {
+//        self.id = id
+//        self.title = title
+//        self.description = description
+//        self.speaker = speaker
+//        self.reviews = reviews
+//    }
 }
 
 public protocol Identable {

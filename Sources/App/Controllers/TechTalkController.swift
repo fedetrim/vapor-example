@@ -16,8 +16,8 @@ final class TechTalkController {
     }
     
     func create(_ req: Request) throws -> Future<TechTalk> {
-        return try req.content.decode(TechTalk.self).flatMap { todo in
-            return todo.save(on: req)
+        return try req.content.decode(TechTalk.self).flatMap { techTalk in
+            return techTalk.save(on: req)
         }
     }
 

@@ -23,20 +23,20 @@ extension Todo: Content { }
 /// Allows `Todo` to be used as a dynamic parameter in route definitions.
 extension Todo: Parameter { }
 
-// MARK: - Review
-extension Review: MySQLModel { }
-extension Review: Migration { }
+//// MARK: - Review
+//extension Review: MySQLModel { }
+//extension Review: Migration { }
 extension Review: Content { }
 extension Review: Parameter { }
-
-// MARK: - Speaker
-extension Speaker: MySQLModel { }
-extension Speaker: Migration { }
+//
+//// MARK: - Speaker
+//extension Speaker: MySQLModel { }
+//extension Speaker: Migration { }
 extension Speaker: Content { }
 extension Speaker: Parameter { }
-
-// MARK: - TechTalk
-extension TechTalk: MySQLModel { }
-extension TechTalk: Migration { }
+//
+//// MARK: - TechTalk
+//extension TechTalk: MySQLModel { }
+//extension TechTalk: Migration { }
 extension TechTalk: Content { }
 extension TechTalk: Parameter { }
