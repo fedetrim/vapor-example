@@ -16,8 +16,7 @@ import UIKit
 
 enum AddReview {
 
-    enum Create {
-
+    enum Save {
         struct Request {
             var description: String
             var stars: Double

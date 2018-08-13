@@ -14,9 +14,12 @@ import UIKit
 
 protocol AddReviewBusinessLogic { }
 
-protocol AddReviewDataStore { }
+protocol AddReviewDataStore {
+    var techTalk: TechTalk! { get set }
+}
 
 class AddReviewInteractor: AddReviewBusinessLogic, AddReviewDataStore {
     var presenter: AddReviewPresentationLogic?
     var worker: AddReviewWorker?
+    var techTalk: TechTalk!
 }

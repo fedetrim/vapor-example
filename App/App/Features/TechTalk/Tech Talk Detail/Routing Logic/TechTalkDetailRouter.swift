@@ -12,7 +12,9 @@
 
 import UIKit
 
-@objc protocol TechTalkDetailRoutingLogic { }
+@objc protocol TechTalkDetailRoutingLogic {
+    func routeToAddReview()
+}
 
 protocol TechTalkDetailDataPassing {
     var dataStore: TechTalkDetailDataStore? { get }
@@ -25,5 +27,20 @@ class TechTalkDetailRouter: NSObject, TechTalkDetailRoutingLogic, TechTalkDetail
 
     init(navigator: Navigatable? = Navigator()) {
         self.navigator = navigator
+    }
+
+    func routeToAddReview() {
+        guard let controller = viewController?.storyboard?.instantiateViewController(withIdentifier: "AddReviewViewController")
+            as? AddReviewViewController else {
+                return
+        }
+        var destinationDataStore = controller.router?.dataStore!
+        
+        passDetailInfo(from: dataStore!, to: &destinationDataStore!)
+        navigator?.navigateToNextScene(from: viewController!, to: controller)
+    }
+    
+    func passDetailInfo(from source: TechTalkDetailDataStore, to destination: inout AddReviewDataStore) {
+        destination.techTalk = source.techTalk
     }
 }
