@@ -13,5 +13,8 @@ public func routes(_ router: Router) throws {
     router.post("techTalks", use: techTalkController.create)
     
     let reviewController = ReviewController()
-    router.post("review", use: reviewController.create)
+    router.post("reviews", use: reviewController.create)
+    
+    let speakerController = SpeakerController()
+    router.post("speakers", use: speakerController.create)
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol ReviewType {
-    var id: Int? { get set }
-    var description: String { get set }
-    var stars: Double { get set }
+    var id: Int? { get }
+    var description: String { get }
+    var stars: Double { get }
 }

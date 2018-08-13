@@ -57,6 +57,7 @@
 		E3E0CDE5212086B6003611EF /* ModelProtocols.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3E0CDE4212086B6003611EF /* ModelProtocols.framework */; };
 		E3E0CDE6212086B6003611EF /* ModelProtocols.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E3E0CDE4212086B6003611EF /* ModelProtocols.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E3E0CDE9212086D6003611EF /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E0CDE8212086D6003611EF /* Models.swift */; };
+		E3E0CDEB2122497F003611EF /* TechTalksProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E0CDEA2122497F003611EF /* TechTalksProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -125,6 +126,7 @@
 		E3C51C25211F795300CD976D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3E0CDE4212086B6003611EF /* ModelProtocols.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ModelProtocols.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3E0CDE8212086D6003611EF /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		E3E0CDEA2122497F003611EF /* TechTalksProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechTalksProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,6 +346,7 @@
 			children = (
 				CE42FE9D2120FEB6005D5EA5 /* FakeTechTalksProvider.swift */,
 				CE42FE9E2120FEB6005D5EA5 /* TechTalksInteractor.swift */,
+				E3E0CDEA2122497F003611EF /* TechTalksProvider.swift */,
 			);
 			path = "Business Logic";
 			sourceTree = "<group>";
@@ -593,6 +596,7 @@
 				CE42FEB12120FEB6005D5EA5 /* TechTalksViewController+UITableViewDataSource.swift in Sources */,
 				CE42FEAE2120FEB6005D5EA5 /* TechTalksEndpoint.swift in Sources */,
 				CE42FEA42120FEB6005D5EA5 /* SpeakerInfoView.swift in Sources */,
+				E3E0CDEB2122497F003611EF /* TechTalksProvider.swift in Sources */,
 				CE42FEA72120FEB6005D5EA5 /* TechTalkDetailWorker.swift in Sources */,
 				E3460439211F8D8800D9E86C /* PListKey.swift in Sources */,
 			);

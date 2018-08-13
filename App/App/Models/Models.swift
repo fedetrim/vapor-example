@@ -26,12 +26,12 @@ struct Speaker: SpeakerType, Codable {
     var photoURL: URL
     var githubURL: URL
     
-    init(id: Int? = nil, firstName: String, lastName: String, photoUrl: URL, githubUrl: URL) {
+    init(id: Int? = nil, firstName: String, lastName: String, photoURL: URL, githubURL: URL) {
         self.id = id
         self.firstName = firstName
         self.lastName = lastName
-        self.photoURL = photoUrl
-        self.githubURL = githubUrl
+        self.photoURL = photoURL
+        self.githubURL = githubURL
     }
 }
 
@@ -41,6 +41,5 @@ struct TechTalk: TechTalkType, Codable {
     var id: Int?
     var title: String
     var description: String
-    var speaker: Speaker
-    var reviews: [Review]
+    var speakers: [Speaker]
 }

@@ -33,11 +33,12 @@ class TechTalksPresenter: TechTalksPresentationLogic {
 
     private func mapTechTalksToViewModel(_ techTalks: [TechTalk]) -> [TechTalks.TechTalkViewModel] {
         return techTalks.map {
+            let speaker = $0.speakers.first!
             return TechTalks.TechTalkViewModel(title: $0.title,
                                                description: $0.description,
-                                               speakerName: "\($0.speaker.firstName) \($0.speaker.lastName)",
-                                               speakerPhoto: $0.speaker.photoURL,
-                                               speakerGithubUrl: $0.speaker.githubURL)
+                                               speakerName: "\(speaker.firstName) \(speaker.lastName)",
+                                               speakerPhoto: speaker.photoURL,
+                                               speakerGithubUrl: speaker.githubURL)
         }
     }
 }
