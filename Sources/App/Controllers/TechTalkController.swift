@@ -51,3 +51,13 @@ final class ReviewController {
     }
     
 }
+
+final class SpeakerController {
+    
+    func create(_ req: Request) throws -> Future<Speaker> {
+        return try req.content.decode(Speaker.self).flatMap { speaker in
+            return speaker.save(on: req)
+        }
+    }
+    
+}
