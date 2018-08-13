@@ -23,7 +23,7 @@ protocol TechTalksDataStore {
 
 class TechTalksInteractor: TechTalksBusinessLogic, TechTalksDataStore {
     var presenter: TechTalksPresentationLogic?
-    var worker: TechTalksProvideable? = FakeTechTalksProvider()
+    var worker: TechTalksProvideable? = TechTalksProvider() //FakeTechTalksProvider()
     var techTalks: [TechTalk] = []
 
     func performLoad(request: TechTalks.Load.Request) {

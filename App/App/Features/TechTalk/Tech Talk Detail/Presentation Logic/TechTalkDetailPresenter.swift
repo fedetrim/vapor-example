@@ -38,7 +38,7 @@ class TechTalkDetailPresenter: TechTalkDetailPresentationLogic {
                                                       speakerName: "\(speaker.firstName) \(speaker.lastName)",
                                                       speakerPhoto: speaker.photoURL,
                                                       speakerGithubUrl: speaker.githubURL,
-                                                      reviews: mapReviewsToViewModel(techTalk.reviews))
+                                                      reviews: mapReviewsToViewModel([]))
     }
 
     private func mapReviewsToViewModel(_ reviews: [Review]) -> [TechTalkDetail.ReviewViewModel] {
