@@ -19,11 +19,17 @@ final class TechTalkController {
         var reviews: [Review]
     }
 
-    func index(_ req: Request) -> Future<[TechTalk]> {
-        return TechTalk.query(on: req)
-            .join(\Review.techTalkID, to: \TechTalk.id)
-//            .alsoDecode(Review.self)
-            .all()
+    func index(_ req: Request) -> Future<[TechTalkDTO]> {
+        return TechTalk.query(on: req).all().map { techTalks -> [TechTalkDTO] in
+            return techTalks.map { techTalk -> TechTalkDTO in
+                let techTalkDTO = TechTalkDTO(id: techTalk.id,
+                                              title: techTalk.title,
+                                              description: techTalk.description,
+                                              speaker: techTalk.speaker,
+                                              reviews: [])
+                return techTalkDTO
+            }
+        }
         
 //            .map(to: TechTalkDTO.self) { data in
 //                let techTalk = data.map { tuple -> TechTalk in
