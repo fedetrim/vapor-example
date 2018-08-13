@@ -11,7 +11,7 @@ import ModelProtocols
 
 final class TechTalkController {
     
-    struct TechTalkDTO: TechTalkType {
+    struct TechTalkDTO: TechTalkType, Content {
         var id: Int?
         var title: String
         var description: String
@@ -19,18 +19,15 @@ final class TechTalkController {
         var reviews: [Review]
     }
     
-    func index(_ req: Request) throws -> Future<View> {
+    func index(_ req: Request) -> Future<TechTalkDTO> {
         return TechTalk.query(on: req)
             .join(\Review.techTalkID, to: \TechTalk.id)
             .alsoDecode(Review.self)
             .all()
-            .flatMap(to: View.self) { data in
-                let reviews = data.map { args -> Review in
-                    let (techTalk, review) = args
-                    return review
-                }
-                
-                return try req.view().render("reviews", reviews)
+            .map(to: TechTalkDTO.self) { data in
+                let speaker = Speaker(firstName: "", lastName: "", photoURL: URL(string: "www.google.com")!, githubURL: URL(string: "www.google.com")!)
+                let techTalkDTO = TechTalkDTO(id: 50, title: "", description: "", speaker: speaker, reviews: [])
+                return techTalkDTO
             }
     }
     
