@@ -20,16 +20,19 @@ final class TechTalkController {
     }
 
     func index(_ req: Request) throws -> Future<[TechTalkDTO]> {
-        return TechTalk.query(on: req).all().map { techTalks -> [TechTalkDTO] in
-            return try techTalks.map { techTalk -> TechTalkDTO in
-                let reviews = try techTalk.reviews.query(on: req).all().wait()
-                let dto = TechTalkDTO(id: techTalk.id,
-                                      title: techTalk.title,
-                                      description: techTalk.description,
-                                      speaker: techTalk.speaker,
-                                      reviews: reviews)
-                return dto
+        return TechTalk.query(on: req).all().flatMap(to: [TechTalkDTO].self) { techTalks in
+            let futures = try techTalks.map { techTalk -> Future<TechTalkDTO> in
+                return try techTalk.reviews.query(on: req).all().map(to: TechTalkDTO.self) { reviews in
+                    let dto = TechTalkDTO(id: techTalk.id,
+                                          title: techTalk.title,
+                                          description: techTalk.description,
+                                          speaker: techTalk.speaker,
+                                          reviews: reviews)
+                    return dto
+                }
             }
+            
+            return futures.flatten(on: req)
         }
     }
     
