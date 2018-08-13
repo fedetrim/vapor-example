@@ -6,6 +6,7 @@
 //  Copyright © 2018 Federico Trimboli. All rights reserved.
 //
 
+import Foundation
 import ModelProtocols
 
 // MARK: - Review
@@ -22,10 +23,10 @@ struct Speaker: SpeakerType, Codable {
     var id: Int?
     var firstName: String
     var lastName: String
-    var photoURL: String
-    var githubURL: String
+    var photoURL: URL
+    var githubURL: URL
     
-    init(id: Int? = nil, firstName: String, lastName: String, photoUrl: String, githubUrl: String) {
+    init(id: Int? = nil, firstName: String, lastName: String, photoUrl: URL, githubUrl: URL) {
         self.id = id
         self.firstName = firstName
         self.lastName = lastName
@@ -37,7 +38,7 @@ struct Speaker: SpeakerType, Codable {
 // MARK: - TechTalk
 
 struct TechTalk: TechTalkType, Codable {
-    var id: Int
+    var id: Int?
     var title: String
     var description: String
     var speaker: Speaker

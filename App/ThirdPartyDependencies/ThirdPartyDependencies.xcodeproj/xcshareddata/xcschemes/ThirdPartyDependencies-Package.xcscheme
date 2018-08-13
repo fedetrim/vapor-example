@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "Alamofire::Alamofire"
-               BuildableName = "Alamofire.framework"
-               BlueprintName = "Alamofire"
-               ReferencedContainer = "container:ThirdPartyDependencies.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ThirdPartyDependencies::ThirdPartyDependencies"
-               BuildableName = "ThirdPartyDependencies.framework"
-               BlueprintName = "ThirdPartyDependencies"
+               BlueprintIdentifier = "Moya::Moya"
+               BuildableName = "Moya.framework"
+               BlueprintName = "Moya"
                ReferencedContainer = "container:ThirdPartyDependencies.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -56,9 +42,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "Moya::Moya"
-               BuildableName = "Moya.framework"
-               BlueprintName = "Moya"
+               BlueprintIdentifier = "Alamofire::Alamofire"
+               BuildableName = "Alamofire.framework"
+               BlueprintName = "Alamofire"
+               ReferencedContainer = "container:ThirdPartyDependencies.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "ThirdPartyDependencies::ThirdPartyDependencies"
+               BuildableName = "ThirdPartyDependencies.framework"
+               BlueprintName = "ThirdPartyDependencies"
                ReferencedContainer = "container:ThirdPartyDependencies.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -87,9 +87,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "Alamofire::Alamofire"
-            BuildableName = "Alamofire.framework"
-            BlueprintName = "Alamofire"
+            BlueprintIdentifier = "Moya::Moya"
+            BuildableName = "Moya.framework"
+            BlueprintName = "Moya"
             ReferencedContainer = "container:ThirdPartyDependencies.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

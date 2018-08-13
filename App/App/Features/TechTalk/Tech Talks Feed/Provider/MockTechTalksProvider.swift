@@ -12,7 +12,7 @@ import ModelProtocols
 
 // swiftlint:disable line_length
 final class MockTechTalksProvider {
-    
+
     private init() { }
 
     static func mock() -> [TechTalk] {
@@ -49,21 +49,21 @@ final class MockTechTalksProvider {
 
         let speakerMGriselli = Speaker(firstName: "Marcos",
                                        lastName: "Griselli",
-                                       photoUrl: "https://avatars0.githubusercontent.com/u/14804033?s=460&v=4",
-                                       githubUrl: "https://github.com/marcosgriselli")
+                                       photoUrl: URL(string: "https://avatars0.githubusercontent.com/u/14804033?s=460&v=4")!,
+                                       githubUrl: URL(string: "https://github.com/marcosgriselli")!)
 
         speakers.append(speakerMGriselli)
 
         let speakerLPolit = Speaker(firstName: "Luciano",
                                     lastName: "Polit",
-                                    photoUrl: "https://avatars3.githubusercontent.com/u/11864162?s=460&v=4",
-                                    githubUrl: "https://github.com/LucianoPolit")
+                                    photoUrl: URL(string: "https://avatars3.githubusercontent.com/u/11864162?s=460&v=4")!,
+                                    githubUrl: URL(string: "https://github.com/LucianoPolit")!)
         speakers.append(speakerLPolit)
 
         let speakerFTrimboli = Speaker(firstName: "Federico",
                                        lastName: "Trimboli",
-                                       photoUrl: "https://avatars0.githubusercontent.com/u/3900360?s=460&v=4",
-                                       githubUrl: "https://github.com/fedetrim")
+                                       photoUrl: URL(string: "https://avatars0.githubusercontent.com/u/3900360?s=460&v=4")!,
+                                       githubUrl: URL(string: "https://github.com/fedetrim")!)
         speakers.append(speakerFTrimboli)
 
         return speakers
