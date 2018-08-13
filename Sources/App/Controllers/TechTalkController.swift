@@ -25,8 +25,17 @@ final class TechTalkController {
             .alsoDecode(Review.self)
             .all()
             .map(to: TechTalkDTO.self) { data in
-                let speaker = Speaker(firstName: "", lastName: "", photoURL: URL(string: "www.google.com")!, githubURL: URL(string: "www.google.com")!)
-                let techTalkDTO = TechTalkDTO(id: 50, title: "", description: "", speaker: speaker, reviews: [])
+                let techTalk = data.map { tuple -> TechTalk in
+                    let (techTalk, _) = tuple
+                    return techTalk
+                }.first
+                
+                let reviews = data.map { tuple -> Review in
+                    let (_, review) = tuple
+                    return review
+                }
+                
+                let techTalkDTO = TechTalkDTO(id: techTalk!.id, title: techTalk!.title, description: techTalk!.description, speaker: techTalk!.speaker, reviews: reviews)
                 return techTalkDTO
             }
     }
