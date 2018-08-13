@@ -36,12 +36,9 @@ struct Speaker: SpeakerType, Codable {
     var photoURL: URL
     var githubURL: URL
     
-    init(id: Int? = nil, firstName: String, lastName: String, photoURL: URL, githubURL: URL) {
-        self.id = id
-        self.firstName = firstName
-        self.lastName = lastName
-        self.photoURL = photoURL
-        self.githubURL = githubURL
+    var techTalkID: TechTalk.ID
+    var techTalk: Parent<Speaker, TechTalk> {
+        return parent(\.techTalkID)
     }
 }
 
@@ -52,11 +49,17 @@ extension Speaker: Parameter { }
 
 // MARK: - TechTalk
 
-struct TechTalk: Codable {
+struct TechTalk: TechTalkType, Codable {
+    typealias Reviews = Children<TechTalk, Review>
+    typealias Speakers = Children<TechTalk, Speaker>
+    
     var id: Int?
     var title: String
     var description: String
-    var speaker: Speaker
+    
+    var speakers: Children<TechTalk, Speaker> {
+        return children(\.techTalkID)
+    }
     
     var reviews: Children<TechTalk, Review> {
         return children(\.techTalkID)

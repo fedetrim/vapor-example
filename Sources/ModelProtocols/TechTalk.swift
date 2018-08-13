@@ -9,12 +9,10 @@
 import Foundation
 
 public protocol TechTalkType {
-    associatedtype Reviews
-    associatedtype Speaker
+    associatedtype Speakers
     
-    var id: Int? { get set }
-    var title: String { get set }
-    var description: String { get set }
-    var speaker: Speaker { get set }
-    var reviews: Reviews { get set }
+    var id: Int? { get }
+    var title: String { get }
+    var description: String { get }
+    var speakers: Speakers { get }
 }

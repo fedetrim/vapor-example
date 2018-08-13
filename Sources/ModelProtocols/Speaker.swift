@@ -9,9 +9,9 @@
 import Foundation
 
 public protocol SpeakerType {
-    var id: Int? { get set }
-    var firstName: String { get set }
-    var lastName: String { get set }
-    var photoURL: URL { get set }
-    var githubURL: URL { get set }
+    var id: Int? { get }
+    var firstName: String { get }
+    var lastName: String { get }
+    var photoURL: URL { get }
+    var githubURL: URL { get }
 }

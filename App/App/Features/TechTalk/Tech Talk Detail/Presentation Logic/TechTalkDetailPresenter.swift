@@ -32,11 +32,12 @@ class TechTalkDetailPresenter: TechTalkDetailPresentationLogic {
     }
 
     private func mapTechTalkDetailToViewModel(_ techTalk: TechTalk) -> TechTalkDetail.TechTalkDetailViewModel {
+        let speaker = techTalk.speakers.first!
         return TechTalkDetail.TechTalkDetailViewModel(title: techTalk.title,
                                                       description: techTalk.description,
-                                                      speakerName: "\(techTalk.speaker.firstName) \(techTalk.speaker.lastName)",
-                                                      speakerPhoto: techTalk.speaker.photoURL,
-                                                      speakerGithubUrl: techTalk.speaker.githubURL,
+                                                      speakerName: "\(speaker.firstName) \(speaker.lastName)",
+                                                      speakerPhoto: speaker.photoURL,
+                                                      speakerGithubUrl: speaker.githubURL,
                                                       reviews: mapReviewsToViewModel(techTalk.reviews))
     }
 
