@@ -14,4 +14,7 @@ public func routes(_ router: Router) throws {
     
     let reviewController = ReviewController()
     router.post("review", use: reviewController.create)
+    
+    let speakerController = SpeakerController()
+    router.post("speaker", use: speakerController.create)
 }
