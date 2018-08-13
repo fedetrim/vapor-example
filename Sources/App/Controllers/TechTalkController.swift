@@ -21,7 +21,7 @@ final class TechTalkController {
 
     func index(_ req: Request) throws -> Future<[TechTalkDTO]> {
         return TechTalk.query(on: req)
-            .join(\Review.techTalkID, to: \TechTalk.id)
+            .join(\Review.techTalkID, to: \TechTalk.id, method: .left)
             .alsoDecode(Review.self)
             .all()
             .map(to: [TechTalkDTO].self) { tuples in
