@@ -18,6 +18,12 @@ final class TechTalkController {
         var speakers: [Speaker]
     }
 
+    struct ReviewDTO: ReviewType, Content {
+        var id: Int?
+        var description: String
+        var stars: Double
+    }
+    
     func index(_ req: Request) throws -> Future<[TechTalkDTO]> {
         return TechTalk.query(on: req).all().flatMap(to: [TechTalkDTO].self) { techTalks in
             let futures = try techTalks.map { techTalk -> Future<TechTalkDTO> in
@@ -38,12 +44,6 @@ final class TechTalkController {
         return try req.content.decode(TechTalk.self).flatMap { techTalk in
             return techTalk.save(on: req)
         }
-    }
-    
-    struct ReviewDTO: ReviewType, Content {
-        var id: Int?
-        var description: String
-        var stars: Double
     }
     
     func createReview(_ req: Request) throws -> Future<Review> {
