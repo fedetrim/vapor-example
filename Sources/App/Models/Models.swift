@@ -23,7 +23,14 @@ struct Review: ReviewType, Codable {
 }
 
 extension Review: MySQLModel { }
-extension Review: Migration { }
+extension Review: Migration {
+    static func prepare(on conn: MySQLConnection) -> Future<Void> {
+        return MySQLDatabase.create(self, on: conn) { builder in
+            try addProperties(to: builder)
+            builder.reference(from: \.techTalkID, to: \TechTalk.id)
+        }
+    }
+}
 extension Review: Content { }
 extension Review: Parameter { }
 
@@ -43,7 +50,14 @@ struct Speaker: SpeakerType, Codable {
 }
 
 extension Speaker: MySQLModel { }
-extension Speaker: Migration { }
+extension Speaker: Migration {
+    static func prepare(on conn: MySQLConnection) -> Future<Void> {
+        return MySQLDatabase.create(self, on: conn) { builder in
+            try addProperties(to: builder)
+            builder.reference(from: \.techTalkID, to: \TechTalk.id)
+        }
+    }
+}
 extension Speaker: Content { }
 extension Speaker: Parameter { }
 
@@ -67,6 +81,14 @@ struct TechTalk: TechTalkType, Codable {
 }
 
 extension TechTalk: MySQLModel { }
-extension TechTalk: Migration { }
+extension TechTalk: Migration {
+    static func prepare(on conn: MySQLConnection) -> Future<Void> {
+        return MySQLDatabase.create(self, on: conn) { builder in
+            builder.field(for: \.id, isIdentifier: true)
+            builder.field(for: \.title)
+            builder.field(for: \.description, type: .varchar(1000))
+        }
+    }
+}
 extension TechTalk: Content { }
 extension TechTalk: Parameter { }
