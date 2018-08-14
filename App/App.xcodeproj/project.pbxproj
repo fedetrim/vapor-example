@@ -226,12 +226,12 @@
 		CE42FE802120FEB6005D5EA5 /* Tech Talk Detail */ = {
 			isa = PBXGroup;
 			children = (
-				CE42FE812120FEB6005D5EA5 /* ViewModels */,
-				CE42FE832120FEB6005D5EA5 /* Provider */,
-				CE42FE862120FEB6005D5EA5 /* Presentation Logic */,
-				CE42FE882120FEB6005D5EA5 /* Display Logic */,
-				CE42FE8A2120FEB6005D5EA5 /* Routing Logic */,
 				CE42FE8C2120FEB6005D5EA5 /* Business Logic */,
+				CE42FE882120FEB6005D5EA5 /* Display Logic */,
+				CE42FE862120FEB6005D5EA5 /* Presentation Logic */,
+				CE42FE832120FEB6005D5EA5 /* Provider */,
+				CE42FE8A2120FEB6005D5EA5 /* Routing Logic */,
+				CE42FE812120FEB6005D5EA5 /* ViewModels */,
 			);
 			path = "Tech Talk Detail";
 			sourceTree = "<group>";
@@ -289,12 +289,12 @@
 		CE42FE8F2120FEB6005D5EA5 /* Tech Talks Feed */ = {
 			isa = PBXGroup;
 			children = (
-				CE42FE902120FEB6005D5EA5 /* ViewModels */,
-				CE42FE922120FEB6005D5EA5 /* Provider */,
-				CE42FE952120FEB6005D5EA5 /* Presentation Logic */,
-				CE42FE972120FEB6005D5EA5 /* Display Logic */,
-				CE42FE9A2120FEB6005D5EA5 /* Routing Logic */,
 				CE42FE9C2120FEB6005D5EA5 /* Business Logic */,
+				CE42FE972120FEB6005D5EA5 /* Display Logic */,
+				CE42FE952120FEB6005D5EA5 /* Presentation Logic */,
+				CE42FE922120FEB6005D5EA5 /* Provider */,
+				CE42FE9A2120FEB6005D5EA5 /* Routing Logic */,
+				CE42FE902120FEB6005D5EA5 /* ViewModels */,
 			);
 			path = "Tech Talks Feed";
 			sourceTree = "<group>";

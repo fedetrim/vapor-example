@@ -14,7 +14,6 @@ import UIKit
 
 @objc protocol AddReviewRoutingLogic {
 
-//    func routeToUpdateFamilyMember()
 }
 
 protocol AddReviewDataPassing {
@@ -29,52 +28,4 @@ class AddReviewRouter: NSObject, AddReviewRoutingLogic, AddReviewDataPassing {
     init(navigator: Navigatable? = Navigator()) {
         self.navigator = navigator
     }
-
-    // MARK: Routing
-//    func routeToUpdateFamilyMember() {
-//        let destinationController = FamilyMemberViewController()
-//        var destinationStore = destinationController.router?.dataStore!
-//        destinationController.state = .update
-//
-//        passDataToUpdateFamilyMember(from: dataStore!, to: &destinationStore!)
-//        if let viewController = viewController {
-//            navigateToAddFamiliar(from: viewController, to: destinationController)
-//        }
-//    }
-//
-//    func navigateToAddFamiliar(from source: FamilyAccountViewController, to destination: FamilyMemberViewController) {
-//        source.navigationController?.pushViewController(destination, animated: true)
-//    }
-//
-//    func passDataToUpdateFamilyMember(from source: FamilyAccountDataStore, to destination: inout FamilyMemberDataStore) {
-//        if let selectedRow = viewController?.myTableView.indexPathForSelectedRow?.row {
-//            destination.user = source.users[selectedRow]
-//        }
-//    }
-//
-//    func getPreviousViewController<T>(expected: T.Type) -> T where T: UIViewController {
-//        var indexRef = 0
-//        if let index = viewController?.navigationController?.viewControllers.count {
-//            indexRef = index - 2
-//        }
-//
-//        guard let previousController = viewController?.navigationController?.viewControllers[indexRef]
-//            else { fatalError() }
-//
-//        guard let controller = previousController as? T else { fatalError() }
-//
-//        return controller
-//    }
 }
-
-//protocol Navigatable: class {
-//    func navigateToNextScene<T>(from source: T, to destination: T) where T: UIViewController
-//}
-//
-//class Navigator: Navigatable {
-//    init() { }
-//
-//    func navigateToNextScene<T>(from source: T, to destination: T) where T: UIViewController {
-//        source.navigationController?.pushViewController(destination, animated: true)
-//    }
-//}

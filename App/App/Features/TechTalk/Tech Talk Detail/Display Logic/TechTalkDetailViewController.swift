@@ -68,9 +68,13 @@ class TechTalkDetailViewController: UIViewController {
             self.reviewsTableView.reloadData()
         }
     }
-    
+
     func requestForDetail() {
         interactor?.performLoad(basedOn: TechTalkDetail.Load.Request())
+    }
+
+    @IBAction func routeToAddReview(_ sender: Any) {
+        router?.routeToAddReview()
     }
 }
 
@@ -84,7 +88,7 @@ extension TechTalkDetailViewController: TechTalkDetailDisplayLogic {
                                    githubUrl: detailViewModel.speakerGithubUrl)
             techTalkView.updateInfo(title: detailViewModel.title,
                                     description: detailViewModel.description)
-
+            self.navigationItem.title = detailViewModel.title
             self.reviews = detailViewModel.reviews
 
             reloadTableView()
