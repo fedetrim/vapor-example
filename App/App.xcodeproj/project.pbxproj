@@ -40,6 +40,7 @@
 		CE42FEBC2120FF24005D5EA5 /* Navigatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42FEBA2120FF24005D5EA5 /* Navigatable.swift */; };
 		CE42FEBD2120FF24005D5EA5 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42FEBB2120FF24005D5EA5 /* Navigator.swift */; };
 		CE42FEC02120FF92005D5EA5 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42FEBF2120FF92005D5EA5 /* UIImageView+Extension.swift */; };
+		CEDED6A02123966200DA9C9F /* CosmosRatingStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDED69F2123966200DA9C9F /* CosmosRatingStar.swift */; };
 		E3460436211F8D8800D9E86C /* Dequeueable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3460420211F8D8800D9E86C /* Dequeueable.swift */; };
 		E3460437211F8D8800D9E86C /* UITableView+Dequeueable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3460423211F8D8800D9E86C /* UITableView+Dequeueable.swift */; };
 		E3460438211F8D8800D9E86C /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3460425211F8D8800D9E86C /* Environment.swift */; };
@@ -111,6 +112,7 @@
 		CE42FEBA2120FF24005D5EA5 /* Navigatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigatable.swift; sourceTree = "<group>"; };
 		CE42FEBB2120FF24005D5EA5 /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		CE42FEBF2120FF92005D5EA5 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		CEDED69F2123966200DA9C9F /* CosmosRatingStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmosRatingStar.swift; sourceTree = "<group>"; };
 		E3460420211F8D8800D9E86C /* Dequeueable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dequeueable.swift; sourceTree = "<group>"; };
 		E3460423211F8D8800D9E86C /* UITableView+Dequeueable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeueable.swift"; sourceTree = "<group>"; };
 		E3460425211F8D8800D9E86C /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
@@ -376,6 +378,14 @@
 			path = UIImageView;
 			sourceTree = "<group>";
 		};
+		CEDED69E2123964F00DA9C9F /* Rating Star */ = {
+			isa = PBXGroup;
+			children = (
+				CEDED69F2123966200DA9C9F /* CosmosRatingStar.swift */,
+			);
+			path = "Rating Star";
+			sourceTree = "<group>";
+		};
 		E346040C211F8D8800D9E86C /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -401,6 +411,7 @@
 		E346041C211F8D8800D9E86C /* Cross Functional */ = {
 			isa = PBXGroup;
 			children = (
+				CEDED69E2123964F00DA9C9F /* Rating Star */,
 				CE42FEB92120FF24005D5EA5 /* Navigator */,
 				CE42FEB62120FF1A005D5EA5 /* DesignableView */,
 				E346041F211F8D8800D9E86C /* Dequeable Cell */,
@@ -572,6 +583,7 @@
 				CE42FEB32120FEB6005D5EA5 /* TechTalksRouter.swift in Sources */,
 				CE42FEB42120FEB6005D5EA5 /* FakeTechTalksProvider.swift in Sources */,
 				CE42FE732120FE62005D5EA5 /* AddReviewModels.swift in Sources */,
+				CEDED6A02123966200DA9C9F /* CosmosRatingStar.swift in Sources */,
 				CE42FEAB2120FEB6005D5EA5 /* TechTalkDetailInteractor.swift in Sources */,
 				CE42FEA22120FEB6005D5EA5 /* TechTalkView.swift in Sources */,
 				CE42FEA82120FEB6005D5EA5 /* TechTalkDetailPresenter.swift in Sources */,
