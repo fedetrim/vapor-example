@@ -53,6 +53,11 @@ final class TechTalkController {
             return review.save(on: req)
         }
     }
+    
+    func indexReview(_ req: Request) throws -> Future<[Review]> {
+        let techTalkID = try req.parameters.next(Int.self)
+        return Review.query(on: req).filter(\.techTalkID == techTalkID).all()
+    }
 }
 
 final class SpeakerController {
