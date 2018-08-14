@@ -12,11 +12,17 @@
 
 import UIKit
 
-protocol AddReviewDisplayLogic: class { }
+protocol AddReviewDisplayLogic: class {
+    func displayOnSave(basedOn viewModel: AddReview.Save.ViewModel)
+}
 
 class AddReviewViewController: UIViewController, AddReviewDisplayLogic {
     var interactor: AddReviewBusinessLogic?
     var router: (NSObjectProtocol & AddReviewRoutingLogic & AddReviewDataPassing)?
+
+    @IBOutlet weak var reviewerMailTextField: UITextField!
+    @IBOutlet weak var starsView: UIView!
+    @IBOutlet weak var opinionTextView: UITextView!
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -42,8 +48,57 @@ class AddReviewViewController: UIViewController, AddReviewDisplayLogic {
         router.dataStore = interactor
     }
 
+    func setUpTextViewDelegate() {
+        self.opinionTextView.delegate = self
+    }
+
+    @IBAction func saveReview(_ sender: Any) {
+        if let validRequest = validateFields() {
+            interactor?.prepareForSave(validRequest)
+        }
+    }
+
+    func validateFields() -> AddReview.Save.Request? {
+        guard let reviewerMail = reviewerMailTextField.text else {
+            return nil
+        }
+
+        guard !opinionTextView.text.isEmpty else {
+            return nil
+        }
+
+        return AddReview.Save.Request(description: opinionTextView.text, stars: 5, email: reviewerMail)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Add review"
+        setUpTextViewDelegate()
+        changeNavigationTitle("Add review")
+    }
+
+    func displayOnSave(basedOn viewModel: AddReview.Save.ViewModel) {
+        router?.routeBack()
+    }
+}
+
+extension UIViewController {
+    func changeNavigationTitle(_ title: String) {
+        self.navigationItem.title = title
+    }
+}
+
+extension AddReviewViewController: UITextViewDelegate {
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Add your own review!"
+            textView.textColor = .lightGray
+        }
+    }
+
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == .lightGray {
+            textView.text = nil
+            textView.textColor = .black
+        }
     }
 }

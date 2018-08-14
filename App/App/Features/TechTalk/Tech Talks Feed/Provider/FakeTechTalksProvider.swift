@@ -21,7 +21,7 @@ protocol TechTalksProvideable {
 class FakeTechTalksProvider: TechTalksProvideable {
     func provide(completion: @escaping (Result<[TechTalk], NSError>) -> Void) {
         let stubProvider = MoyaProvider<TechTalksEndpoint>(stubClosure: MoyaProvider.immediatelyStub)
-        stubProvider.request(.get) { (result) in
+        stubProvider.request(.get) { result in
             do {
                 let response = try result.dematerialize()
 

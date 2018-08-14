@@ -53,7 +53,6 @@ final class TechTalkController {
             return review.save(on: req)
         }
     }
-
 }
 
 final class SpeakerController {

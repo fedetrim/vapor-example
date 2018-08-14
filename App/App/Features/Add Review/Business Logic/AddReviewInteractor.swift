@@ -11,8 +11,11 @@
 //
 
 import UIKit
+import Result
 
-protocol AddReviewBusinessLogic { }
+protocol AddReviewBusinessLogic {
+    func prepareForSave(_ request: AddReview.Save.Request)
+}
 
 protocol AddReviewDataStore {
     var techTalk: TechTalk! { get set }
@@ -20,6 +23,22 @@ protocol AddReviewDataStore {
 
 class AddReviewInteractor: AddReviewBusinessLogic, AddReviewDataStore {
     var presenter: AddReviewPresentationLogic?
-    var worker: AddReviewWorker?
+    var provider: AddReviewProvidable?
     var techTalk: TechTalk!
+    
+    init(provider: AddReviewProvidable = FakeAddReviewProvider()) {
+        self.provider = provider
+    }
+
+    func prepareForSave(_ request: AddReview.Save.Request) {
+        provider?.provide(reviewId: techTalk.id, request: request, completion: { result in
+            do {
+                let response = try result.dematerialize()
+
+                self.presenter?.presentSave(basedOn: AddReview.Save.Response(result: .success(response)))
+            } catch {
+                // Add error handling logic
+            }
+        })
+    }
 }
