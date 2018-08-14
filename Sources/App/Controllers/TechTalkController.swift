@@ -55,7 +55,8 @@ final class TechTalkController {
     }
     
     func indexReview(_ req: Request) throws -> Future<[Review]> {
-        return Review.query(on: req).all()
+        let techTalkID = try req.parameters.next(Int.self)
+        return Review.query(on: req).filter(\.techTalkID == techTalkID).all()
     }
 }
 
