@@ -49,7 +49,6 @@ final class ReviewController {
             return review.save(on: req)
         }
     }
-    
 }
 
 final class SpeakerController {

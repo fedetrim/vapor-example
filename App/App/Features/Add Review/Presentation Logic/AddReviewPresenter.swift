@@ -12,9 +12,20 @@
 
 import UIKit
 
-protocol AddReviewPresentationLogic { }
+protocol AddReviewPresentationLogic {
+    func presentSave(basedOn response: AddReview.Save.Response)
+}
 
 class AddReviewPresenter: AddReviewPresentationLogic {
     weak var viewController: AddReviewDisplayLogic?
 
+    func presentSave(basedOn response: AddReview.Save.Response) {
+        do {
+            let _ = try response.result.dematerialize()
+
+            viewController?.displayOnSave(basedOn: AddReview.Save.ViewModel(result: .success(true)))
+        } catch {
+            viewController?.displayOnSave(basedOn: AddReview.Save.ViewModel(result: .success(false)))
+        }
+    }
 }

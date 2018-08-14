@@ -11,10 +11,17 @@ import UIKit
 class SpeakerInfoView: DesignableView {
     @IBOutlet private var fullNameLabel: UILabel!
     @IBOutlet private var photoImageView: UIImageView!
-    @IBOutlet private var githubUrlLabel: UILabel!
+    @IBOutlet private var githubUrlButton: UIButton!
+
+    private var githubURL: URL?
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        setGithubUrlButtonAction()
+    }
+
+    func setGithubUrlButtonAction() {
+        githubUrlButton.addTarget(self, action: #selector(showGithubURL), for: .touchUpInside)
     }
 
     override func xibName() -> String {
@@ -24,6 +31,13 @@ class SpeakerInfoView: DesignableView {
     func update(fullName: String, photoImageUrl: URL, githubUrl: URL) {
         self.fullNameLabel.text = fullName
         self.photoImageView.loadImageFrom(url: photoImageUrl)
-//        self.githubUrlLabel.text = githubUrl
+        self.githubURL = githubUrl
+    }
+
+    @objc
+    func showGithubURL() {
+        if let url = githubURL {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
 }

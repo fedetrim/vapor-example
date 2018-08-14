@@ -24,7 +24,7 @@ enum AddReview {
         }
 
         struct Response {
-            var result: Result<Bool, NSError>
+            var result: Result<Review, NSError>
         }
 
         struct ViewModel {

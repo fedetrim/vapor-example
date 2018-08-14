@@ -13,10 +13,10 @@ import Result
 class TechTalksProvider: TechTalksProvideable {
     func provide(completion: @escaping (Result<[TechTalk], NSError>) -> Void) {
         let provider = MoyaProvider<TechTalksEndpoint>()
-        provider.request(.get) { (result) in
+        provider.request(.get) { result in
             do {
                 let response = try result.dematerialize()
-                
+
                 completion(.success(try response.map([TechTalk].self)))
             } catch {
                 completion(.failure(NSError(domain: "Provider Error", code: 600, userInfo: nil)))

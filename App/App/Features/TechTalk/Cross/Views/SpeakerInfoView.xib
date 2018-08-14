@@ -14,7 +14,7 @@
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="kUy-hn-Zkp"/>
                 <outlet property="fullNameLabel" destination="8bb-t8-jar" id="JFh-x7-ha1"/>
-                <outlet property="githubUrlLabel" destination="sgW-Eh-pw1" id="W48-nC-Ik7"/>
+                <outlet property="githubUrlButton" destination="j6Z-tZ-EtH" id="2VS-98-ARP"/>
                 <outlet property="photoImageView" destination="1AL-8G-pQH" id="Mc2-mL-8cZ"/>
             </connections>
         </placeholder>
@@ -30,15 +30,9 @@
                         <constraint firstAttribute="width" constant="76" id="lK1-uF-cZa"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speaker's repo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgW-Eh-pw1">
-                    <rect key="frame" x="100" y="67.5" width="204" height="20.5"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speaker Full name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bb-t8-jar">
-                    <rect key="frame" x="100" y="39" width="204" height="20.5"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                    <rect key="frame" x="100" y="37.5" width="204" height="18"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -48,22 +42,27 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6Z-tZ-EtH">
+                    <rect key="frame" x="100" y="59" width="204" height="30"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                    <state key="normal" title="Speaker's GitHub Repo"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="ra4-Rm-vSf" firstAttribute="leading" secondItem="1AL-8G-pQH" secondAttribute="trailing" constant="8" id="2H2-p7-eqz"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ra4-Rm-vSf" secondAttribute="trailing" constant="16" id="7sa-bx-UQp"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8bb-t8-jar" secondAttribute="trailing" constant="16" id="BAn-Es-uz0"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="sgW-Eh-pw1" secondAttribute="trailing" constant="16" id="EHJ-5m-Laf"/>
+                <constraint firstItem="ra4-Rm-vSf" firstAttribute="leading" secondItem="1AL-8G-pQH" secondAttribute="trailing" constant="8" id="Cwv-cf-bU5"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="1AL-8G-pQH" secondAttribute="bottom" constant="12" id="Eoj-IS-dW7"/>
-                <constraint firstItem="sgW-Eh-pw1" firstAttribute="top" secondItem="8bb-t8-jar" secondAttribute="bottom" constant="8" id="I4y-zU-hf2"/>
-                <constraint firstItem="sgW-Eh-pw1" firstAttribute="leading" secondItem="1AL-8G-pQH" secondAttribute="trailing" constant="8" id="SSK-Ot-bmN"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="j6Z-tZ-EtH" secondAttribute="trailing" constant="16" id="RrS-fO-EVb"/>
+                <constraint firstItem="ra4-Rm-vSf" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="Tcx-Io-IvJ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ra4-Rm-vSf" secondAttribute="trailing" constant="16" id="Tk1-fR-WtW"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="j6Z-tZ-EtH" secondAttribute="bottom" constant="11" id="Uc1-XN-8iC"/>
                 <constraint firstItem="8bb-t8-jar" firstAttribute="leading" secondItem="1AL-8G-pQH" secondAttribute="trailing" constant="8" id="VB2-Yx-Pol"/>
-                <constraint firstItem="ra4-Rm-vSf" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="c3j-NC-uuP"/>
-                <constraint firstItem="8bb-t8-jar" firstAttribute="top" secondItem="ra4-Rm-vSf" secondAttribute="bottom" constant="8" id="c6M-B5-sP6"/>
                 <constraint firstItem="1AL-8G-pQH" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="12" id="fmg-Lt-nfJ"/>
+                <constraint firstItem="j6Z-tZ-EtH" firstAttribute="leading" secondItem="1AL-8G-pQH" secondAttribute="trailing" constant="8" id="g7E-yt-NXn"/>
+                <constraint firstItem="j6Z-tZ-EtH" firstAttribute="top" secondItem="ra4-Rm-vSf" secondAttribute="bottom" constant="28" id="hUy-7g-Yjw"/>
                 <constraint firstItem="1AL-8G-pQH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="jGY-Q7-Zye"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="sgW-Eh-pw1" secondAttribute="bottom" constant="12" id="tXA-4y-KUL"/>
+                <constraint firstItem="j6Z-tZ-EtH" firstAttribute="top" secondItem="8bb-t8-jar" secondAttribute="bottom" constant="3.5" id="uc7-yD-Y0H"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

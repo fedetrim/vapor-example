@@ -13,7 +13,7 @@
 import UIKit
 
 @objc protocol AddReviewRoutingLogic {
-
+    func routeBack()
 }
 
 protocol AddReviewDataPassing {
@@ -27,5 +27,9 @@ class AddReviewRouter: NSObject, AddReviewRoutingLogic, AddReviewDataPassing {
 
     init(navigator: Navigatable? = Navigator()) {
         self.navigator = navigator
+    }
+    
+    func routeBack() {
+        self.viewController?.navigationController?.popViewController(animated: true)
     }
 }
