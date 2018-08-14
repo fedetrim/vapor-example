@@ -53,6 +53,10 @@ final class TechTalkController {
             return review.save(on: req)
         }
     }
+    
+    func indexReview(_ req: Request) throws -> Future<[Review]> {
+        return Review.query(on: req).all()
+    }
 }
 
 final class SpeakerController {
