@@ -39,17 +39,21 @@ final class TechTalkController {
             return techTalk.save(on: req)
         }
     }
-
-}
-
-final class ReviewController {
     
-    func create(_ req: Request) throws -> Future<Review> {
-        return try req.content.decode(Review.self).flatMap { review in
+    struct ReviewDTO: ReviewType, Content {
+        var id: Int?
+        var description: String
+        var stars: Double
+    }
+    
+    func createReview(_ req: Request) throws -> Future<Review> {
+        let techTalkID = try req.parameters.next(Int.self)
+        return try req.content.decode(ReviewDTO.self).flatMap { dto in
+            let review = Review(id: nil, description: dto.description, stars: dto.stars, techTalkID: techTalkID)
             return review.save(on: req)
         }
     }
-    
+
 }
 
 final class SpeakerController {

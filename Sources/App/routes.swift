@@ -11,9 +11,7 @@ public func routes(_ router: Router) throws {
     let techTalkController = TechTalkController()
     router.get("techTalks", use: techTalkController.index)
     router.post("techTalks", use: techTalkController.create)
-    
-    let reviewController = ReviewController()
-    router.post("reviews", use: reviewController.create)
+    router.post("techTalks", TechTalk.parameter, use: techTalkController.createReview)
     
     let speakerController = SpeakerController()
     router.post("speakers", use: speakerController.create)
