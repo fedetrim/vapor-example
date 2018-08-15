@@ -41,6 +41,8 @@
 		CE42FEBD2120FF24005D5EA5 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42FEBB2120FF24005D5EA5 /* Navigator.swift */; };
 		CE42FEC02120FF92005D5EA5 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42FEBF2120FF92005D5EA5 /* UIImageView+Extension.swift */; };
 		CEDED6A02123966200DA9C9F /* CosmosRatingStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDED69F2123966200DA9C9F /* CosmosRatingStar.swift */; };
+		CEDED6A32123A9DA00DA9C9F /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDED6A12123A9DA00DA9C9F /* ReviewTableViewCell.swift */; };
+		CEDED6A42123A9DA00DA9C9F /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDED6A22123A9DA00DA9C9F /* ReviewTableViewCell.xib */; };
 		E3460436211F8D8800D9E86C /* Dequeueable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3460420211F8D8800D9E86C /* Dequeueable.swift */; };
 		E3460437211F8D8800D9E86C /* UITableView+Dequeueable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3460423211F8D8800D9E86C /* UITableView+Dequeueable.swift */; };
 		E3460438211F8D8800D9E86C /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3460425211F8D8800D9E86C /* Environment.swift */; };
@@ -113,6 +115,8 @@
 		CE42FEBB2120FF24005D5EA5 /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		CE42FEBF2120FF92005D5EA5 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		CEDED69F2123966200DA9C9F /* CosmosRatingStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmosRatingStar.swift; sourceTree = "<group>"; };
+		CEDED6A12123A9DA00DA9C9F /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
+		CEDED6A22123A9DA00DA9C9F /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewTableViewCell.xib; sourceTree = "<group>"; };
 		E3460420211F8D8800D9E86C /* Dequeueable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dequeueable.swift; sourceTree = "<group>"; };
 		E3460423211F8D8800D9E86C /* UITableView+Dequeueable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeueable.swift"; sourceTree = "<group>"; };
 		E3460425211F8D8800D9E86C /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
@@ -267,6 +271,8 @@
 			isa = PBXGroup;
 			children = (
 				CE42FE892120FEB6005D5EA5 /* TechTalkDetailViewController.swift */,
+				CEDED6A12123A9DA00DA9C9F /* ReviewTableViewCell.swift */,
+				CEDED6A22123A9DA00DA9C9F /* ReviewTableViewCell.xib */,
 			);
 			path = "Display Logic";
 			sourceTree = "<group>";
@@ -560,6 +566,7 @@
 				CE42FEA12120FEB6005D5EA5 /* TechTalkView.xib in Resources */,
 				CE42FEA02120FEB6005D5EA5 /* TechTalkTableViewCell.xib in Resources */,
 				E3C51C24211F795300CD976D /* LaunchScreen.storyboard in Resources */,
+				CEDED6A42123A9DA00DA9C9F /* ReviewTableViewCell.xib in Resources */,
 				E3C51C21211F795300CD976D /* Assets.xcassets in Resources */,
 				CE42FE9F2120FEB6005D5EA5 /* SpeakerInfoView.xib in Resources */,
 				E3C51C1F211F795100CD976D /* Main.storyboard in Resources */,
@@ -595,6 +602,7 @@
 				CE42FEAF2120FEB6005D5EA5 /* MockTechTalksProvider.swift in Sources */,
 				CE42FEB52120FEB6005D5EA5 /* TechTalksInteractor.swift in Sources */,
 				CE42FEBD2120FF24005D5EA5 /* Navigator.swift in Sources */,
+				CEDED6A32123A9DA00DA9C9F /* ReviewTableViewCell.swift in Sources */,
 				CE42FEB02120FEB6005D5EA5 /* TechTalksPresenter.swift in Sources */,
 				CE42FE722120FE62005D5EA5 /* AddReviewPresenter.swift in Sources */,
 				CE42FEAD2120FEB6005D5EA5 /* TechTalksModels.swift in Sources */,

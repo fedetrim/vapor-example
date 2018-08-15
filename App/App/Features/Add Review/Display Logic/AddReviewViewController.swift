@@ -48,6 +48,13 @@ class AddReviewViewController: UIViewController, AddReviewDisplayLogic {
         router.dataStore = interactor
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setUpTextViewDelegate()
+        changeNavigationTitle("Add review")
+        addHideKeyboardGesture()
+    }
+
     func setUpTextViewDelegate() {
         self.opinionTextView.delegate = self
     }
@@ -70,14 +77,20 @@ class AddReviewViewController: UIViewController, AddReviewDisplayLogic {
         return AddReview.Save.Request(description: opinionTextView.text, stars: starsView.rating, email: reviewerMail)
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setUpTextViewDelegate()
-        changeNavigationTitle("Add review")
-    }
-
     func displayOnSave(basedOn viewModel: AddReview.Save.ViewModel) {
         router?.routeBack()
+    }
+
+    func addHideKeyboardGesture() {
+        let gesture = UITapGestureRecognizer()
+        gesture.addTarget(self, action: #selector(self.hideKeyBoard(sender:)))
+
+        self.view.addGestureRecognizer(gesture)
+    }
+
+    @objc
+    func hideKeyBoard(sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
     }
 }
 
@@ -96,8 +109,8 @@ extension AddReviewViewController: UITextViewDelegate {
     }
 
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == .lightGray {
-            textView.text = nil
+        if textView.text == "Add your own review!" {
+            textView.text = String()
             textView.textColor = .black
         }
     }

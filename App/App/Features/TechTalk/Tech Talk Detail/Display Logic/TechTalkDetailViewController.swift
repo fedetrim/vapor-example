@@ -57,10 +57,8 @@ class TechTalkDetailViewController: UIViewController {
 
     func setUpTableView() {
         reviewsTableView.dataSource = self
-        reviewsTableView.delegate = self
         reviewsTableView.tableFooterView = UIView()
-        reviewsTableView.backgroundColor = .lightGray
-        reviewsTableView.registerNib(TechTalkTableViewCell.self)
+        reviewsTableView.registerNib(ReviewTableViewCell.self)
     }
 
     func reloadTableView() {
@@ -104,10 +102,14 @@ extension TechTalkDetailViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell: ReviewTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+
+        decorateCell(cell, review: reviews[indexPath.row])
+
+        return cell
     }
-}
 
-extension TechTalkDetailViewController: UITableViewDelegate {
-
+    func decorateCell(_ cell: ReviewTableViewCell, review: TechTalkDetail.ReviewViewModel) {
+        cell.update(rate: review.stars, reviewerName: review.reviewerEmail, opinion: review.description)
+    }
 }
