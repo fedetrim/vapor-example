@@ -25,14 +25,6 @@ struct Speaker: SpeakerType, Codable {
     var lastName: String
     var photoURL: URL
     var githubURL: URL
-    
-    init(id: Int? = nil, firstName: String, lastName: String, photoURL: URL, githubURL: URL) {
-        self.id = id
-        self.firstName = firstName
-        self.lastName = lastName
-        self.photoURL = photoURL
-        self.githubURL = githubURL
-    }
 }
 
 // MARK: - TechTalk
