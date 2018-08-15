@@ -21,7 +21,7 @@ class AddReviewViewController: UIViewController, AddReviewDisplayLogic {
     var router: (NSObjectProtocol & AddReviewRoutingLogic & AddReviewDataPassing)?
 
     @IBOutlet weak var reviewerMailTextField: UITextField!
-    @IBOutlet weak var starsView: UIView!
+    @IBOutlet weak var starsView: CosmosView!
     @IBOutlet weak var opinionTextView: UITextView!
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -67,7 +67,7 @@ class AddReviewViewController: UIViewController, AddReviewDisplayLogic {
             return nil
         }
 
-        return AddReview.Save.Request(description: opinionTextView.text, stars: 5, email: reviewerMail)
+        return AddReview.Save.Request(description: opinionTextView.text, stars: starsView.rating, email: reviewerMail)
     }
 
     override func viewDidLoad() {
