@@ -19,7 +19,7 @@ enum TechTalkDetailEndpoint: TargetType {
     var path: String {
         switch self {
         case .detail(let id):
-            return "/techTalks/\(id)"
+            return "techTalks/\(id)/reviews"
         }
     }
 
@@ -38,5 +38,4 @@ enum TechTalkDetailEndpoint: TargetType {
     var headers: [String: String]? {
         return [:]
     }
-
 }

@@ -31,14 +31,14 @@ class TechTalkDetailPresenter: TechTalkDetailPresentationLogic {
         }
     }
 
-    private func mapTechTalkDetailToViewModel(_ techTalk: TechTalk) -> TechTalkDetail.TechTalkDetailViewModel {
+    private func mapTechTalkDetailToViewModel(_ techTalk: TechTalkDetails) -> TechTalkDetail.TechTalkDetailViewModel {
         let speaker = techTalk.speakers.first!
         return TechTalkDetail.TechTalkDetailViewModel(title: techTalk.title,
                                                       description: techTalk.description,
                                                       speakerName: "\(speaker.firstName) \(speaker.lastName)",
                                                       speakerPhoto: speaker.photoURL,
                                                       speakerGithubUrl: speaker.githubURL,
-                                                      reviews: mapReviewsToViewModel([]))
+                                                      reviews: mapReviewsToViewModel(techTalk.reviews))
     }
 
     private func mapReviewsToViewModel(_ reviews: [Review]) -> [TechTalkDetail.ReviewViewModel] {

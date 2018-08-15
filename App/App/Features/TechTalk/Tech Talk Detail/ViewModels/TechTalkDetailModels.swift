@@ -20,7 +20,7 @@ enum TechTalkDetail {
         struct Request { }
 
         struct Response {
-            var result: Result<TechTalk, NSError>
+            var result: Result<TechTalkDetails, NSError>
         }
 
         struct ViewModel {

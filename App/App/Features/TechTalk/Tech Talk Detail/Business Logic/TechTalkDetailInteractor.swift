@@ -23,12 +23,26 @@ protocol TechTalkDetailDataStore {
 
 class TechTalkDetailInteractor: TechTalkDetailBusinessLogic, TechTalkDetailDataStore {
     var presenter: TechTalkDetailPresentationLogic?
-    var provider: TechTalkDetailProvideable? = FakeTechTalkDetailProvider()
+    var provider: TechTalkDetailProvideable? = TechTalkDetailProvider()// FakeTechTalkDetailProvider()
     var techTalk: TechTalk!
 
     func performLoad(basedOn request: TechTalkDetail.Load.Request) {
-        // Perform provider call
-        
-        presenter?.presentDetail(basedOn: TechTalkDetail.Load.Response(result: .success(techTalk)))
+        provider?.provide(techTalkId: techTalk.id!) {
+            do {
+                let reviews = try $0.dematerialize()
+
+                self.presenter?.presentDetail(basedOn: TechTalkDetail.Load.Response(result: .success(self.mapToDetail(techTalk: self.techTalk, reviews: reviews))))
+            } catch {
+                // Perform error handling
+            }
+        }
+    }
+
+    func mapToDetail(techTalk: TechTalk, reviews: [Review]) -> TechTalkDetails {
+        return TechTalkDetails(id: techTalk.id,
+                               title: techTalk.title,
+                               description: techTalk.description,
+                               speakers: techTalk.speakers,
+                               reviews: reviews)
     }
 }

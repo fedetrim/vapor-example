@@ -35,3 +35,11 @@ struct TechTalk: TechTalkType, Codable {
     var description: String
     var speakers: [Speaker]
 }
+
+struct TechTalkDetails: TechTalkType, Codable {
+    var id: Int?
+    var title: String
+    var description: String
+    var speakers: [Speaker]
+    var reviews: [Review]
+}

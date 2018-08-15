@@ -37,5 +37,4 @@ enum TechTalksEndpoint: TargetType {
     var headers: [String: String]? {
         return [:]
     }
-
 }
