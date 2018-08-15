@@ -34,19 +34,23 @@ final class MockTechTalksProvider {
 
     static func mockSpeakers() -> [Speaker] {
         return [
-            Speaker(firstName: "Marcos",
+            Speaker(id: 1,
+                    firstName: "Marcos",
                     lastName: "Griselli",
                     photoURL: URL(string: "https://avatars0.githubusercontent.com/u/14804033?s=460&v=4")!,
                     githubURL: URL(string: "https://github.com/marcosgriselli")!),
-            Speaker(firstName: "Luciano",
+            Speaker(id: 2,
+                    firstName: "Luciano",
                     lastName: "Polit",
                     photoURL: URL(string: "https://avatars3.githubusercontent.com/u/11864162?s=460&v=4")!,
                     githubURL: URL(string: "https://github.com/LucianoPolit")!),
-            Speaker(firstName: "Federico",
+            Speaker(id: 3,
+                    firstName: "Federico",
                     lastName: "Trimboli",
                     photoURL: URL(string: "https://avatars0.githubusercontent.com/u/3900360?s=460&v=4")!,
                     githubURL: URL(string: "https://github.com/fedetrim")!),
-            Speaker(firstName: "Nahuel",
+            Speaker(id: 3,
+                    firstName: "Nahuel",
                     lastName: "Zapata",
                     photoURL: URL(string: "https://avatars1.githubusercontent.com/u/13871479?s=460&v=4")!,
                     githubURL: URL(string: "https://github.com/inahuelzapata")!)
