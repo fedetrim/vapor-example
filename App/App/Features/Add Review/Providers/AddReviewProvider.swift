@@ -18,12 +18,10 @@ class AddReviewProvider: AddReviewProvidable {
         provider.request(AddReviewEndpoint.add(id: id!, review: review)) { result in
             do {
                 let response = try result.dematerialize()
-                let json = try response.mapJSON()
-                print(json)
 
                 completion(.success(try response.map(Review.self)))
             } catch {
-                completion(.failure(NSError(domain: "Provider Error", code: 600, userInfo: nil)))
+                completion(.failure(NSError(domain: error.localizedDescription, code: 400, userInfo: nil)))
             }
         }
     }

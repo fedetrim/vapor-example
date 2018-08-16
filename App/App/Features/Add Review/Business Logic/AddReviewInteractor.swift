@@ -37,7 +37,7 @@ class AddReviewInteractor: AddReviewBusinessLogic, AddReviewDataStore {
 
                 self.presenter?.presentSave(basedOn: AddReview.Save.Response(result: .success(response)))
             } catch {
-                // Add error handling logic
+                self.presenter?.presentSave(basedOn: AddReview.Save.Response(result: .failure(NSError(domain: error.localizedDescription, code: 400, userInfo: nil))))
             }
         })
     }
