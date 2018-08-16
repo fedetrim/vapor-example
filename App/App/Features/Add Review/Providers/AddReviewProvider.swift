@@ -13,7 +13,7 @@ import Result
 class AddReviewProvider: AddReviewProvidable {
     func provide(reviewId id: Int?, request: AddReview.Save.Request, completion: @escaping (Result<Review, NSError>) -> Void) {
         let provider = MoyaProvider<AddReviewEndpoint>()
-        let review = Review(id: nil, description: request.description, stars: request.stars, reviewerMail: request.email)
+        let review = Review(id: nil, description: request.description, stars: request.stars, reviewerEmail: request.email)
 
         provider.request(AddReviewEndpoint.add(id: id!, review: review)) { result in
             do {

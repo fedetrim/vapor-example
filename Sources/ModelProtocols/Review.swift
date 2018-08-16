@@ -12,4 +12,5 @@ public protocol ReviewType {
     var id: Int? { get }
     var description: String { get }
     var stars: Double { get }
+    var reviewerEmail: String { get }
 }

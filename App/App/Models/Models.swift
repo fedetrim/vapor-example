@@ -12,10 +12,11 @@ import ModelProtocols
 // MARK: - Review
 
 struct Review: ReviewType, Codable {
+
     var id: Int?
     var description: String
     var stars: Double
-    var reviewerMail: String?
+    var reviewerEmail: String
 }
 
 // MARK: - Speaker

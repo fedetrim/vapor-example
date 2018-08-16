@@ -26,6 +26,7 @@ struct Review: ReviewType, Codable {
     var id: Int?
     var description: String
     var stars: Double
+    var reviewerEmail: String
     
     var techTalkID: TechTalk.ID
     var techTalk: Parent<Review, TechTalk> {
@@ -99,7 +100,6 @@ extension TechTalk: Migration {
             builder.field(for: \.id, isIdentifier: true)
             builder.field(for: \.title)
             builder.field(for: \.description, type: .varchar(1000))
-            
         }
     }
     #endif
