@@ -50,10 +50,10 @@ final class TechTalkController {
     func createReview(_ req: Request) throws -> Future<Review> {
         let techTalkID = try req.parameters.next(Int.self)
         return try req.content.decode(ReviewDTO.self).flatMap { dto in
-            let review = Review(id: nil, description: dto.description, stars: dto.stars, techTalkID: techTalkID, reviewerEmail: dto.reviewerEmail)
+            let review = Review(id: nil, description: dto.description, stars: dto.stars, reviewerEmail: dto.reviewerEmail, techTalkID: techTalkID)
 
             if review.reviewerEmail.isEmpty {
-                return Abort(.badRequest)
+                throw Abort(.badRequest)
             }
 
             return review.save(on: req)
