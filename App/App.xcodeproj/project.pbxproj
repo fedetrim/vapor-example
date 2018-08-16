@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CE2B44BE2122535400AA6466 /* FakeAddReviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2B44BD2122535400AA6466 /* FakeAddReviewProvider.swift */; };
 		CE3F0F412124DE85008CBD69 /* TechTalkDetailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F0F402124DE85008CBD69 /* TechTalkDetailProvider.swift */; };
+		CE3F0F432124E86B008CBD69 /* AddReviewEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F0F422124E86B008CBD69 /* AddReviewEndpoint.swift */; };
+		CE3F0F452124E98F008CBD69 /* AddReviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F0F442124E98F008CBD69 /* AddReviewProvider.swift */; };
 		CE42FE712120FE62005D5EA5 /* AddReviewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42FE662120FE62005D5EA5 /* AddReviewRouter.swift */; };
 		CE42FE722120FE62005D5EA5 /* AddReviewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42FE682120FE62005D5EA5 /* AddReviewPresenter.swift */; };
 		CE42FE732120FE62005D5EA5 /* AddReviewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42FE6A2120FE62005D5EA5 /* AddReviewModels.swift */; };
@@ -84,6 +86,8 @@
 /* Begin PBXFileReference section */
 		CE2B44BD2122535400AA6466 /* FakeAddReviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeAddReviewProvider.swift; sourceTree = "<group>"; };
 		CE3F0F402124DE85008CBD69 /* TechTalkDetailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechTalkDetailProvider.swift; sourceTree = "<group>"; };
+		CE3F0F422124E86B008CBD69 /* AddReviewEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewEndpoint.swift; sourceTree = "<group>"; };
+		CE3F0F442124E98F008CBD69 /* AddReviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewProvider.swift; sourceTree = "<group>"; };
 		CE42FE662120FE62005D5EA5 /* AddReviewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReviewRouter.swift; sourceTree = "<group>"; };
 		CE42FE682120FE62005D5EA5 /* AddReviewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReviewPresenter.swift; sourceTree = "<group>"; };
 		CE42FE6A2120FE62005D5EA5 /* AddReviewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReviewModels.swift; sourceTree = "<group>"; };
@@ -180,6 +184,8 @@
 			isa = PBXGroup;
 			children = (
 				CE2B44BD2122535400AA6466 /* FakeAddReviewProvider.swift */,
+				CE3F0F422124E86B008CBD69 /* AddReviewEndpoint.swift */,
+				CE3F0F442124E98F008CBD69 /* AddReviewProvider.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -603,6 +609,7 @@
 				CE42FEB82120FF1B005D5EA5 /* DesignableView.swift in Sources */,
 				CE42FE752120FE62005D5EA5 /* AddReviewViewController.swift in Sources */,
 				E3460438211F8D8800D9E86C /* Environment.swift in Sources */,
+				CE3F0F432124E86B008CBD69 /* AddReviewEndpoint.swift in Sources */,
 				CE42FEAF2120FEB6005D5EA5 /* MockTechTalksProvider.swift in Sources */,
 				CE42FEB52120FEB6005D5EA5 /* TechTalksInteractor.swift in Sources */,
 				CE42FEBD2120FF24005D5EA5 /* Navigator.swift in Sources */,
@@ -618,6 +625,7 @@
 				CE2B44BE2122535400AA6466 /* FakeAddReviewProvider.swift in Sources */,
 				CE42FEC02120FF92005D5EA5 /* UIImageView+Extension.swift in Sources */,
 				CE42FEB12120FEB6005D5EA5 /* TechTalksViewController+UITableViewDataSource.swift in Sources */,
+				CE3F0F452124E98F008CBD69 /* AddReviewProvider.swift in Sources */,
 				CE42FEAE2120FEB6005D5EA5 /* TechTalksEndpoint.swift in Sources */,
 				CE42FEA42120FEB6005D5EA5 /* SpeakerInfoView.swift in Sources */,
 				E3E0CDEB2122497F003611EF /* TechTalksProvider.swift in Sources */,

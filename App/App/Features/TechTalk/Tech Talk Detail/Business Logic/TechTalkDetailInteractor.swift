@@ -23,7 +23,7 @@ protocol TechTalkDetailDataStore {
 
 class TechTalkDetailInteractor: TechTalkDetailBusinessLogic, TechTalkDetailDataStore {
     var presenter: TechTalkDetailPresentationLogic?
-    var provider: TechTalkDetailProvideable? = TechTalkDetailProvider()// FakeTechTalkDetailProvider()
+    var provider: TechTalkDetailProvideable? = TechTalkDetailProvider() // FakeTechTalkDetailProvider()
     var techTalk: TechTalk!
 
     func performLoad(basedOn request: TechTalkDetail.Load.Request) {

@@ -20,6 +20,6 @@ class FakeAddReviewProvider: AddReviewProvidable {
     func provide(reviewId id: Int?,
                  request: AddReview.Save.Request,
                  completion: @escaping (Result<Review, NSError>) -> Void) {
-        completion(.success(Review(id: 1, description: "Muy buena", stars: 5)))
+        completion(.success(Review(id: 1, description: "Muy buena", stars: 5, reviewerMail: "")))
     }
 }

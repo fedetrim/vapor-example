@@ -16,8 +16,8 @@ class TechTalkDetailProvider: TechTalkDetailProvideable {
         provider.request(.detail(techTalkId)) { result in
             do {
                 let response = try result.dematerialize()
-
-                completion(.success(try response.map([Review].self)))
+                let reviews = try response.map([Review].self)
+                completion(.success(reviews))
             } catch {
                 completion(.failure(NSError(domain: "Provider Error", code: 600, userInfo: nil)))
             }

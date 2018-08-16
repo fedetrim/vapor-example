@@ -25,8 +25,8 @@ class AddReviewInteractor: AddReviewBusinessLogic, AddReviewDataStore {
     var presenter: AddReviewPresentationLogic?
     var provider: AddReviewProvidable?
     var techTalk: TechTalk!
-    
-    init(provider: AddReviewProvidable = FakeAddReviewProvider()) {
+
+    init(provider: AddReviewProvidable = AddReviewProvider()) {
         self.provider = provider
     }
 
