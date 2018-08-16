@@ -28,7 +28,9 @@ enum TechTalkDetailEndpoint: TargetType {
     }
 
     var sampleData: Data {
-        return Data()
+        let mock = MockTechTalkDetailProvider.mock()
+        let encoder = JSONEncoder()
+        return try! encoder.encode(mock)
     }
 
     var task: Task {

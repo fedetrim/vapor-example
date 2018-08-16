@@ -11,6 +11,7 @@
 		CE3F0F412124DE85008CBD69 /* TechTalkDetailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F0F402124DE85008CBD69 /* TechTalkDetailProvider.swift */; };
 		CE3F0F432124E86B008CBD69 /* AddReviewEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F0F422124E86B008CBD69 /* AddReviewEndpoint.swift */; };
 		CE3F0F452124E98F008CBD69 /* AddReviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F0F442124E98F008CBD69 /* AddReviewProvider.swift */; };
+		CE3F0F472124FBD5008CBD69 /* MockTechTalkDetailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F0F462124FBD5008CBD69 /* MockTechTalkDetailProvider.swift */; };
 		CE42FE712120FE62005D5EA5 /* AddReviewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42FE662120FE62005D5EA5 /* AddReviewRouter.swift */; };
 		CE42FE722120FE62005D5EA5 /* AddReviewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42FE682120FE62005D5EA5 /* AddReviewPresenter.swift */; };
 		CE42FE732120FE62005D5EA5 /* AddReviewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42FE6A2120FE62005D5EA5 /* AddReviewModels.swift */; };
@@ -24,7 +25,6 @@
 		CE42FEA42120FEB6005D5EA5 /* SpeakerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42FE7F2120FEB6005D5EA5 /* SpeakerInfoView.swift */; };
 		CE42FEA52120FEB6005D5EA5 /* TechTalkDetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42FE822120FEB6005D5EA5 /* TechTalkDetailModels.swift */; };
 		CE42FEA62120FEB6005D5EA5 /* TechTalkDetailEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42FE842120FEB6005D5EA5 /* TechTalkDetailEndpoint.swift */; };
-		CE42FEA72120FEB6005D5EA5 /* TechTalkDetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42FE852120FEB6005D5EA5 /* TechTalkDetailWorker.swift */; };
 		CE42FEA82120FEB6005D5EA5 /* TechTalkDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42FE872120FEB6005D5EA5 /* TechTalkDetailPresenter.swift */; };
 		CE42FEA92120FEB6005D5EA5 /* TechTalkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42FE892120FEB6005D5EA5 /* TechTalkDetailViewController.swift */; };
 		CE42FEAA2120FEB6005D5EA5 /* TechTalkDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42FE8B2120FEB6005D5EA5 /* TechTalkDetailRouter.swift */; };
@@ -88,6 +88,7 @@
 		CE3F0F402124DE85008CBD69 /* TechTalkDetailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechTalkDetailProvider.swift; sourceTree = "<group>"; };
 		CE3F0F422124E86B008CBD69 /* AddReviewEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewEndpoint.swift; sourceTree = "<group>"; };
 		CE3F0F442124E98F008CBD69 /* AddReviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewProvider.swift; sourceTree = "<group>"; };
+		CE3F0F462124FBD5008CBD69 /* MockTechTalkDetailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTechTalkDetailProvider.swift; sourceTree = "<group>"; };
 		CE42FE662120FE62005D5EA5 /* AddReviewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReviewRouter.swift; sourceTree = "<group>"; };
 		CE42FE682120FE62005D5EA5 /* AddReviewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReviewPresenter.swift; sourceTree = "<group>"; };
 		CE42FE6A2120FE62005D5EA5 /* AddReviewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReviewModels.swift; sourceTree = "<group>"; };
@@ -101,7 +102,6 @@
 		CE42FE7F2120FEB6005D5EA5 /* SpeakerInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerInfoView.swift; sourceTree = "<group>"; };
 		CE42FE822120FEB6005D5EA5 /* TechTalkDetailModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechTalkDetailModels.swift; sourceTree = "<group>"; };
 		CE42FE842120FEB6005D5EA5 /* TechTalkDetailEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechTalkDetailEndpoint.swift; sourceTree = "<group>"; };
-		CE42FE852120FEB6005D5EA5 /* TechTalkDetailWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechTalkDetailWorker.swift; sourceTree = "<group>"; };
 		CE42FE872120FEB6005D5EA5 /* TechTalkDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechTalkDetailPresenter.swift; sourceTree = "<group>"; };
 		CE42FE892120FEB6005D5EA5 /* TechTalkDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechTalkDetailViewController.swift; sourceTree = "<group>"; };
 		CE42FE8B2120FEB6005D5EA5 /* TechTalkDetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechTalkDetailRouter.swift; sourceTree = "<group>"; };
@@ -262,8 +262,8 @@
 			isa = PBXGroup;
 			children = (
 				CE42FE842120FEB6005D5EA5 /* TechTalkDetailEndpoint.swift */,
-				CE42FE852120FEB6005D5EA5 /* TechTalkDetailWorker.swift */,
 				CE3F0F402124DE85008CBD69 /* TechTalkDetailProvider.swift */,
+				CE3F0F462124FBD5008CBD69 /* MockTechTalkDetailProvider.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -617,6 +617,7 @@
 				CE42FEB02120FEB6005D5EA5 /* TechTalksPresenter.swift in Sources */,
 				CE42FE722120FE62005D5EA5 /* AddReviewPresenter.swift in Sources */,
 				CE42FEAD2120FEB6005D5EA5 /* TechTalksModels.swift in Sources */,
+				CE3F0F472124FBD5008CBD69 /* MockTechTalkDetailProvider.swift in Sources */,
 				E3460436211F8D8800D9E86C /* Dequeueable.swift in Sources */,
 				CE42FEA32120FEB6005D5EA5 /* TechTalkTableViewCell.swift in Sources */,
 				CE42FEA52120FEB6005D5EA5 /* TechTalkDetailModels.swift in Sources */,
@@ -629,7 +630,6 @@
 				CE42FEAE2120FEB6005D5EA5 /* TechTalksEndpoint.swift in Sources */,
 				CE42FEA42120FEB6005D5EA5 /* SpeakerInfoView.swift in Sources */,
 				E3E0CDEB2122497F003611EF /* TechTalksProvider.swift in Sources */,
-				CE42FEA72120FEB6005D5EA5 /* TechTalkDetailWorker.swift in Sources */,
 				E3460439211F8D8800D9E86C /* PListKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

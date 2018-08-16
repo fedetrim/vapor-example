@@ -16,7 +16,7 @@ protocol TechTalkDetailProvideable {
 
 class FakeTechTalkDetailProvider: TechTalkDetailProvideable {
     func provide(techTalkId: Int, completion: @escaping (Result<[Review], NSError>) -> Void) {
-        let provider = MoyaProvider<TechTalkDetailEndpoint>()
+        let provider = MoyaProvider<TechTalkDetailEndpoint>(stubClosure: MoyaProvider.immediatelyStub)
 
         provider.request(.detail(techTalkId)) { result in
             do {

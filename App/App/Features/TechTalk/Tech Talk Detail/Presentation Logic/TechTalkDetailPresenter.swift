@@ -45,7 +45,7 @@ class TechTalkDetailPresenter: TechTalkDetailPresentationLogic {
         return reviews.map {
             return TechTalkDetail.ReviewViewModel(description: $0.description,
                                                   stars: $0.stars,
-                                                  reviewerEmail: "inahuelzapata@gmail.com")
+                                                  reviewerEmail: $0.reviewerEmail)
         }
     }
 }
