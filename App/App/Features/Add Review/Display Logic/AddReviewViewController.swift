@@ -79,13 +79,9 @@ class AddReviewViewController: UIViewController, AddReviewDisplayLogic {
 
     func displayOnSave(basedOn viewModel: AddReview.Save.ViewModel) {
         do {
-            let response = try viewModel.result.dematerialize()
+            let _ = try viewModel.result.dematerialize()
 
-            if response {
-                router?.routeBack()
-            } else {
-                displayError(title: "Error", description: "An error has ocurred")
-            }
+            router?.routeBack()
         } catch {
             displayError(title: "Error", description: error.localizedDescription)
         }
@@ -101,19 +97,6 @@ class AddReviewViewController: UIViewController, AddReviewDisplayLogic {
     @objc
     func hideKeyBoard(sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
-    }
-
-}
-
-extension UIViewController {
-    func changeNavigationTitle(_ title: String) {
-        self.navigationItem.title = title
-    }
-
-    func displayError(title: String, description: String) {
-        let alertController = UIAlertController(title: title, message: description, preferredStyle: .alert)
-
-        self.present(alertController, animated: true, completion: nil)
     }
 }
 

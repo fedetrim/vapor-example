@@ -21,11 +21,11 @@ class AddReviewPresenter: AddReviewPresentationLogic {
 
     func presentSave(basedOn response: AddReview.Save.Response) {
         do {
-            let _ = try response.result.dematerialize()
+            let review = try response.result.dematerialize()
 
-            viewController?.displayOnSave(basedOn: AddReview.Save.ViewModel(result: .success(true)))
+            viewController?.displayOnSave(basedOn: AddReview.Save.ViewModel(result: .success(review)))
         } catch {
-            viewController?.displayOnSave(basedOn: AddReview.Save.ViewModel(result: .success(false)))
+            viewController?.displayOnSave(basedOn: AddReview.Save.ViewModel(result: .failure(NSError(domain: error.localizedDescription, code: 400, userInfo: nil))))
         }
     }
 }
